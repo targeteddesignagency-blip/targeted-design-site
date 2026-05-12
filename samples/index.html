@@ -6,31 +6,42 @@
 <title>Targeted Design — Industry Samples</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0a;color:#fff;font-family:'Montserrat',system-ui,sans-serif;padding:2rem}
+body{background:#0a0a0a;color:#fff;font-family:'Montserrat','Inter',system-ui,sans-serif;padding:2rem}
 h1{font-size:2rem;font-weight:800;letter-spacing:-1px;margin-bottom:.25rem}
 h1 span{color:#fe1616}
 .subtitle{color:#888;font-size:.9rem;margin-bottom:2rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:2rem}
-.card{background:#111;border-radius:12px;overflow:hidden;transition:transform .2s}
-.card:hover{transform:translateY(-4px)}
-.card-header{padding:1rem 1.25rem .75rem;border-bottom:1px solid #222}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:2rem}
+.card{background:#111;border-radius:12px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(254,22,22,.15)}
+.card-header{padding:1rem 1.25rem .75rem;border-bottom:1px solid #222;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
 .card-header .industry{font-size:1.1rem;font-weight:700;display:flex;align-items:center;gap:.5rem}
 .card-header .type{color:#888;font-size:.75rem;text-transform:uppercase;letter-spacing:1px}
+.expand-hint{color:#555;font-size:.7rem;display:flex;align-items:center;gap:4px}
 .card-body{padding:.75rem}
 .card-body h3{font-size:.65rem;color:#666;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.5rem}
-.preview{width:100%;height:0;padding-bottom:62.5%;position:relative;background:#1a1a1a;border-radius:8px;overflow:hidden;border:1px solid #222}
-.preview iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;transform:scale(1);transform-origin:top left}
-.render-img{width:100%;border-radius:8px;margin-top:.5rem;border:1px solid #222}
+.preview-wrap{position:relative;cursor:pointer;border-radius:8px;overflow:hidden;border:1px solid #222}
+.preview{width:100%;height:0;padding-bottom:62.5%;position:relative;background:#1a1a1a}
+.preview iframe{position:absolute;top:0;left:0;border:none}
+.render-img{width:100%;border-radius:8px;margin-top:.5rem;border:1px solid #222;cursor:pointer;transition:opacity .2s}
+.render-img:hover{opacity:.85}
 .links{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
 .links a{background:#1a1a1a;color:#ccc;font-size:.7rem;padding:.35rem .75rem;border-radius:6px;text-decoration:none;border:1px solid #333;transition:all .15s}
 .links a:hover{background:#fe1616;color:#fff;border-color:#fe1616}
 .section-title{font-size:.8rem;color:#555;text-transform:uppercase;letter-spacing:2px;margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid #1a1a1a}
-.badge{display:inline-block;background:#1a1a1a;color:#fe1616;font-size:.65rem;padding:.15rem .5rem;border-radius:4px;margin-left:.5rem;font-weight:600}
+
+/* Fullscreen Lightbox */
+.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);z-index:9999;display:none;flex-direction:column;align-items:center;justify-content:center}
+.lightbox.active{display:flex}
+.lightbox-close{position:absolute;top:20px;right:24px;color:#fff;font-size:2rem;cursor:pointer;background:none;border:none;z-index:10001;padding:8px;line-height:1;opacity:.7;transition:opacity .2s}
+.lightbox-close:hover{opacity:1}
+.lightbox-iframe-wrap{width:95vw;height:90vh;position:relative}
+.lightbox-iframe-wrap iframe{width:100%;height:100%;border:none;background:#2a2a2a}
+.lightbox-label{position:absolute;top:12px;left:16px;color:#888;font-size:.75rem;text-transform:uppercase;letter-spacing:1px;z-index:10001}
 </style>
 </head>
 <body>
 <h1>Targeted<span>.</span>Design</h1>
-<p class="subtitle">Batch 001 — Industry Samples Gallery</p>
+<p class="subtitle">Batch 001 — Industry Samples Gallery &nbsp;·&nbsp; Click any card to see full size</p>
 
 <div class="section-title">Print-Ready Cards (Front EN / Back ES)</div>
 <div class="grid" id="cards-grid"></div>
@@ -38,7 +49,18 @@ h1 span{color:#fe1616}
 <div class="section-title">Lifestyle Renders</div>
 <div class="grid" id="renders-grid"></div>
 
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">&times;</button>
+  <div class="lightbox-label" id="lightbox-label"></div>
+  <div class="lightbox-iframe-wrap">
+    <iframe id="lightbox-iframe" src="" loading="lazy"></iframe>
+  </div>
+</div>
+
 <script>
+const CARD_W = 3600;
+const CARD_H = 2700;
+
 const industries = [
   {slug:'restaurant',icon:'🌮',name:'Restaurants'},
   {slug:'auto-repair',icon:'🔧',name:'Auto Repair'},
@@ -50,47 +72,100 @@ const industries = [
   {slug:'pest-control',icon:'🐛',name:'Pest Control'}
 ];
 
+function fitIframe(iframe) {
+  const container = iframe.parentElement;
+  const cw = container.clientWidth;
+  const ch = container.clientHeight;
+  const scale = Math.min(cw / CARD_W, ch / CARD_H);
+  iframe.style.width = CARD_W + 'px';
+  iframe.style.height = CARD_H + 'px';
+  iframe.style.transformOrigin = 'top left';
+  iframe.style.transform = 'scale(' + scale + ')';
+  container.style.height = (CARD_H * scale) + 'px';
+}
+
+const lightbox = document.getElementById('lightbox');
+const lightboxIframe = document.getElementById('lightbox-iframe');
+const lightboxLabel = document.getElementById('lightbox-label');
+
+function openLightbox(url, label) {
+  lightboxLabel.textContent = label;
+  lightboxIframe.src = '';
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  lightboxIframe.src = url;
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  lightboxIframe.src = '';
+  document.body.style.overflow = '';
+}
+
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', function(e) {
+  if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+
 const cardsGrid = document.getElementById('cards-grid');
-industries.forEach(ind => {
+industries.forEach(function(ind) {
   const card = document.createElement('div');
   card.className = 'card';
-  card.innerHTML = `
-    <div class="card-header">
-      <div class="industry">${ind.icon} ${ind.name}</div>
-      <div class="type">EDDM Postcard — Bilingual</div>
-    </div>
-    <div class="card-body">
-      <h3>Front (English)</h3>
-      <div class="preview">
-        <iframe src="${ind.slug}-front-en.html" loading="lazy"></iframe>
-      </div>
-      <h3 style="margin-top:.75rem">Back (Spanish)</h3>
-      <div class="preview">
-        <iframe src="${ind.slug}-back-es.html" loading="lazy"></iframe>
-      </div>
-      <div class="links">
-        <a href="${ind.slug}-front-en.html" target="_blank">🔍 Front Full</a>
-        <a href="${ind.slug}-back-es.html" target="_blank">🔍 Back Full</a>
-      </div>
-    </div>
-  `;
+  card.innerHTML = 
+    '<div class="card-header">' +
+      '<div class="industry">' + ind.icon + ' ' + ind.name + '</div>' +
+      '<div style="display:flex;align-items:center;gap:1rem">' +
+        '<div class="type">EDDM Postcard — Bilingual</div>' +
+        '<div class="expand-hint">⛶ Expand</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="card-body">' +
+      '<h3>Front (English)</h3>' +
+      '<div class="preview-wrap" data-url="' + ind.slug + '-front-en.html" data-label="' + ind.name + ' — Front (English)">' +
+        '<div class="preview"><iframe src="' + ind.slug + '-front-en.html" loading="lazy" data-card="true"></iframe></div>' +
+      '</div>' +
+      '<h3 style="margin-top:.75rem">Back (Spanish)</h3>' +
+      '<div class="preview-wrap" data-url="' + ind.slug + '-back-es.html" data-label="' + ind.name + ' — Back (Spanish)">' +
+        '<div class="preview"><iframe src="' + ind.slug + '-back-es.html" loading="lazy" data-card="true"></iframe></div>' +
+      '</div>' +
+      '<div class="links">' +
+        '<a href="' + ind.slug + '-front-en.html" target="_blank">🔍 Front Full</a>' +
+        '<a href="' + ind.slug + '-back-es.html" target="_blank">🔍 Back Full</a>' +
+      '</div>' +
+    '</div>';
   cardsGrid.appendChild(card);
 });
 
 const rendersGrid = document.getElementById('renders-grid');
-industries.forEach(ind => {
+industries.forEach(function(ind) {
   const card = document.createElement('div');
   card.className = 'card';
-  card.innerHTML = `
-    <div class="card-header">
-      <div class="industry">${ind.icon} ${ind.name}</div>
-      <div class="type">Lifestyle Render</div>
-    </div>
-    <div class="card-body">
-      <img class="render-img" src="renders/${ind.slug}-lifestyle-render.jpg" alt="${ind.name} lifestyle render" loading="lazy">
-    </div>
-  `;
+  card.innerHTML = 
+    '<div class="card-header">' +
+      '<div class="industry">' + ind.icon + ' ' + ind.name + '</div>' +
+      '<div class="type">Lifestyle Render</div>' +
+    '</div>' +
+    '<div class="card-body">' +
+      '<img class="render-img" src="renders/' + ind.slug + '-lifestyle-render.jpg" alt="' + ind.name + ' lifestyle render" loading="lazy">' +
+    '</div>';
   rendersGrid.appendChild(card);
+});
+
+// Scale card iframes to fit their containers
+function scaleAllIframes() {
+  document.querySelectorAll('iframe[data-card]').forEach(fitIframe);
+}
+window.addEventListener('load', scaleAllIframes);
+window.addEventListener('resize', scaleAllIframes);
+
+// Lightbox on click
+document.querySelectorAll('.preview-wrap').forEach(function(wrap) {
+  wrap.addEventListener('click', function() {
+    openLightbox(wrap.dataset.url, wrap.dataset.label);
+  });
 });
 </script>
 </body>
