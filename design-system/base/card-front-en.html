@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDDM Card — Batch 001 English Front</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* Design System Tokens — Swap --brand-primary for client variants */
+  :root {
+    --brand-primary: #fe1616;
+    --brand-dark: #000000;
+    --brand-surface: #333132;
+    --brand-text: #ffffff;
+    --brand-muted: #999999;
+    --font-headline: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  /* 12" × 9" at 300 DPI = 3600px × 2700px. Using 1200px × 900px at quarter scale for preview. */
+  .card {
+    width: 1200px;
+    height: 900px;
+    background: var(--brand-dark);
+    color: var(--brand-text);
+    font-family: var(--font-body);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 70px 50px;
+  }
+
+  /* Safe zone: 0.25" inside trim = 75px at quarter scale */
+  /* Bleed: 0.125" = 37.5px — not rendered here, in print file only */
+
+  .logo-block {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .logo-block .logo-mark {
+    font-size: 42px;
+    font-weight: 900;
+    font-family: var(--font-headline);
+    color: var(--brand-text);
+    letter-spacing: -1px;
+  }
+  .logo-block .logo-mark span {
+    color: var(--brand-primary);
+  }
+  .logo-block .logo-url {
+    font-size: 13px;
+    color: var(--brand-muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .hook {
+    text-align: center;
+    margin: 15px 0 20px;
+  }
+  .hook h1 {
+    font-family: var(--font-headline);
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .hook h1 .accent {
+    color: var(--brand-primary);
+  }
+
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 980px;
+    margin: 10px 0;
+  }
+
+  .industry-cell {
+    background: var(--brand-surface);
+    border-radius: 8px;
+    padding: 16px 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+  }
+  .industry-cell .icon {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+  .industry-cell .name {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--brand-text);
+  }
+  .industry-cell .sub {
+    font-size: 10px;
+    color: var(--brand-muted);
+    margin-top: 2px;
+  }
+
+  .tagline {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--brand-muted);
+    margin: 10px 0;
+  }
+
+  .cta {
+    text-align: center;
+    margin-top: 5px;
+  }
+  .cta .phone {
+    font-family: var(--font-headline);
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--brand-primary);
+    letter-spacing: 2px;
+  }
+  .cta .url {
+    font-size: 14px;
+    color: var(--brand-text);
+    letter-spacing: 2px;
+    margin-top: 4px;
+  }
+  .cta .price {
+    font-size: 13px;
+    color: var(--brand-muted);
+    margin-top: 8px;
+  }
+  .cta .price strong {
+    color: var(--brand-text);
+  }
+  .cta .guarantee {
+    font-size: 11px;
+    color: var(--brand-primary);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* Print guide marks (hidden in production) */
+  .guide {
+    position: absolute;
+    border: 1px dashed rgba(0,255,0,0.3);
+    pointer-events: none;
+    z-index: 100;
+  }
+  .guide-safe {
+    top: 75px; left: 75px; right: 75px; bottom: 75px;
+  }
+
+  /* Color variant swap instructions:
+     Navy: --brand-primary: #1a365d
+     Royal Blue: --brand-primary: #4263eb
+     Forest Green: --brand-primary: #2d6a4f
+     Gold: --brand-primary: #d4a017
+     Orange: --brand-primary: #e85d04
+     Teal: --brand-primary: #0d9488
+  */
+</style>
+</head>
+<body>
+
+<div class="card">
+  <!-- Safe zone guide (remove for production) -->
+  <div class="guide guide-safe"></div>
+
+  <!-- Logo Block -->
+  <div class="logo-block">
+    <div class="logo-mark">Targeted<span>.</span>Design</div>
+    <div class="logo-url">Every Door · Every Home</div>
+  </div>
+
+  <!-- Hook -->
+  <div class="hook">
+    <h1>YOUR PHONE SHOULD BE RINGING.<br><span class="accent">NOT YOUR COMPETITOR'S.</span></h1>
+  </div>
+
+  <!-- Industry Grid -->
+  <div class="industry-grid">
+    <div class="industry-cell">
+      <div class="icon">🌮</div>
+      <div class="name">Restaurants</div>
+      <div class="sub">Tacos · Taquerías</div>
+    </div>
+    <div class="industry-cell">
+      <div class="icon">🔧</div>
+      <div class="name">Auto Repair</div>
+      <div class="sub">Mechanic · Body Shop</div>
+    </div>
+    <div class="industry-cell">
+      <div class="icon">❄️</div>
+      <div class="name">HVAC</div>
+      <div class="sub">AC · Heating</div>
+    </div>
+    <div class="industry-cell">
+      <div class="icon">🔩</div>
+      <div class="name">Plumbing</div>
+      <div class="sub">Emergency · Repair</div>
+    </div>
+    <div class="industry-cell">
+      <div class="icon">💈</div>
+      <div class="name">Hair & Barbers</div>
+      <div class="sub">Salons · Barbershops</div>
+    </div>
+    <div class="industry-cell">
+      <div class="icon">🧒</div>
+      <div class="name">Childcare</div>
+      <div class="sub">Learning · Daycare</div>
+    </div>
+    <div class="industry-cell">
+      <div class="icon">🌿</div>
+      <div class="name">Landscaping</div>
+      <div class="sub">Lawn · Garden</div>
+    </div>
+    <div class="industry-cell">
+      <div class="icon">🐛</div>
+      <div class="name">Pest Control</div>
+      <div class="sub">Exterminator · Bug</div>
+    </div>
+  </div>
+
+  <!-- Tagline -->
+  <div class="tagline">Every Door · Every Home · Your Next Customer</div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="phone">(210) 903-5551</div>
+    <div class="url">targeted-design.com</div>
+    <div class="price">Starting at <strong>$150/mo</strong></div>
+    <div class="guarantee">Results Guaranteed</div>
+  </div>
+</div>
+
+</body>
+</html>

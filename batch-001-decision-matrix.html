@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Targeted Design — Decision Matrix</title>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --border: #1e1e1e;
+    --text: #e5e5e5;
+    --muted: #666;
+    --accent: #fe1616;
+    --accent2: #ff6b35;
+    --diamond: #00c853;
+    --fool: #ff1744;
+    --contest: #ffc107;
+    --open: #00e676;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', monospace;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+
+  .container { max-width: 1400px; margin: 0 auto; }
+
+  h1 {
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 48px;
+    color: var(--text);
+  }
+
+  h3 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    margin-top: 48px;
+  }
+
+  /* LEGEND */
+  .legend {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .legend-swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+  }
+
+  /* THE TESSERACT — Outer Cube */
+  .outer-cube {
+    display: grid;
+    grid-template-columns: 200px repeat(8, 1fr);
+    gap: 2px;
+    margin-bottom: 60px;
+  }
+
+  .cell {
+    padding: 12px 8px;
+    font-size: 11px;
+    line-height: 1.3;
+    border-radius: 4px;
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.15s ease;
+  }
+
+  .cell:hover {
+    transform: scale(1.04);
+    z-index: 10;
+  }
+
+  .cell-header {
+    background: var(--surface);
+    color: var(--text);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 14px 8px;
+    text-align: center;
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+  }
+
+  .cell-zip {
+    background: var(--surface);
+    padding: 14px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .cell-zip .zip-code {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .cell-zip .zip-meta {
+    font-size: 9px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* Heat intensity */
+  .heat-5 { background: rgba(254, 22, 22, 0.85); color: #fff; }
+  .heat-4 { background: rgba(254, 100, 50, 0.7); color: #fff; }
+  .heat-3 { background: rgba(255, 152, 0, 0.55); color: #fff; }
+  .heat-2 { background: rgba(255, 193, 7, 0.35); color: #fff; }
+  .heat-1 { background: rgba(100, 100, 100, 0.2); color: #aaa; }
+
+  .cell .opportunity { font-weight: 700; font-size: 12px; }
+  .cell .competition { font-size: 9px; opacity: 0.8; margin-top: 2px; }
+  .cell .verdict { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-top: 6px; }
+
+  .verdict-diamond { color: #00e676; }
+  .verdict-good { color: #ffc107; }
+  .verdict-contested { color: #ff9800; }
+  .verdict-fool { color: #ff1744; }
+
+  /* INNER CUBE — Competitive Saturation */
+  .inner-cube {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+    margin-bottom: 60px;
+  }
+
+  .competitor-row {
+    display: grid;
+    grid-template-columns: 180px 100px 80px 80px 80px 80px 1fr;
+    gap: 2px;
+    align-items: center;
+  }
+
+  .comp-cell {
+    padding: 10px 12px;
+    font-size: 11px;
+    background: var(--surface);
+  }
+
+  .comp-header {
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 10px 12px;
+    background: var(--border);
+  }
+
+  .comp-name { font-weight: 600; }
+
+  .check { color: var(--diamond); }
+  .partial { color: var(--contest); }
+  .x { color: var(--fool); }
+
+  /* ZIP RANKING */
+  .zip-ranking {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 60px;
+  }
+
+  .rank-card {
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 24px;
+    border-left: 4px solid;
+    position: relative;
+  }
+
+  .rank-card .rank-num {
+    font-size: 48px;
+    font-weight: 800;
+    opacity: 0.15;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+  }
+
+  .rank-card .zip-code {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .rank-card .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .rank-card .stat-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+  }
+
+  .rank-card .stat-value {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .rank-card .why {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #999;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  .rank-1 { border-color: var(--diamond); }
+  .rank-2 { border-color: #69f0ae; }
+  .rank-3 { border-color: var(--contest); }
+  .rank-4 { border-color: var(--accent); }
+
+  /* INSIGHT CARDS */
+  .insight {
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 12px;
+    border-left: 4px solid var(--accent);
+  }
+
+  .insight h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .insight p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #aaa;
+  }
+
+  @media (max-width: 900px) {
+    .outer-cube { grid-template-columns: 120px repeat(8, 1fr); font-size: 9px; }
+    .cell { padding: 6px 4px; min-height: 60px; }
+    .competitor-row { grid-template-columns: 120px 80px 60px 60px 60px 60px 1fr; }
+    .zip-ranking { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media print {
+    body { background: #fff; color: #000; }
+    .cell { color: #000 !important; }
+    .heat-5 { background: #c62828 !important; color: #fff !important; }
+    .heat-4 { background: #e65100 !important; color: #fff !important; }
+    .heat-3 { background: #f57c00 !important; color: #fff !important; }
+    .heat-2 { background: #fbc02d !important; color: #000 !important; }
+    .heat-1 { background: #e0e0e0 !important; color: #333 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>Targeted Design Agency — Batch 001</h1>
+  <h2>The Tesseract: Opportunity × Competition</h2>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch heat-5"></div> A-tier: high need + zero competition</div>
+    <div class="legend-item"><div class="legend-swatch heat-4"></div> Strong: high need + low competition</div>
+    <div class="legend-item"><div class="legend-swatch heat-3"></div> Good: need exists, some competition</div>
+    <div class="legend-item"><div class="legend-swatch heat-2"></div> Contested: need + growing competition</div>
+    <div class="legend-item"><div class="legend-swatch heat-1"></div> Weak: low need or saturated</div>
+  </div>
+
+  <!-- OUTER CUBE: ZIP × Industry × Competition Weight -->
+  <h3>Outer Cube — Where Language Need Meets Competition Weight</h3>
+
+  <div class="outer-cube">
+    <!-- Header row -->
+    <div class="cell-header"></div>
+    <div class="cell-header">Restaurants / Tacos</div>
+    <div class="cell-header">Auto Repair</div>
+    <div class="cell-header">HVAC</div>
+    <div class="cell-header">Plumbing</div>
+    <div class="cell-header">Hair / Barber</div>
+    <div class="cell-header">Childcare</div>
+    <div class="cell-header">Landscaping</div>
+    <div class="cell-header">Pest Control</div>
+
+    <!-- 78237 — The True Diamond -->
+    <div class="cell-zip">
+      <span class="zip-code">78237</span>
+      <span class="zip-meta">95% H · $43K · 330 biz</span>
+    </div>
+    <div class="cell heat-5"><span class="opportunity">🔥 A+</span><span class="competition">Comp: ZERO</span><span class="verdict verdict-diamond">DIAMOND</span></div>
+    <div class="cell heat-5"><span class="opportunity">🔥 A+</span><span class="competition">Comp: ZERO</span><span class="verdict verdict-diamond">DIAMOND</span></div>
+    <div class="cell heat-4"><span class="opportunity">🔥 A</span><span class="competition">Comp: Near zero</span><span class="verdict verdict-diamond">DIAMOND</span></div>
+    <div class="cell heat-4"><span class="opportunity">🔥 A</span><span class="competition">Comp: Near zero</span><span class="verdict verdict-diamond">DIAMOND</span></div>
+    <div class="cell heat-5"><span class="opportunity">🔥 A+</span><span class="competition">Comp: ZERO</span><span class="verdict verdict-diamond">DIAMOND</span></div>
+    <div class="cell heat-5"><span class="opportunity">🔥 A+</span><span class="competition">Comp: ZERO</span><span class="verdict verdict-diamond">DIAMOND</span></div>
+    <div class="cell heat-5"><span class="opportunity">🔥 A+</span><span class="competition">Comp: ZERO</span><span class="verdict verdict-diamond">DIAMOND</span></div>
+    <div class="cell heat-3"><span class="opportunity">✅ B+</span><span class="competition">Comp: LOW</span><span class="verdict verdict-good">GOOD</span></div>
+
+    <!-- 78207 — True Diamond -->
+    <div class="cell-zip">
+      <span class="zip-code">78207</span>
+      <span class="zip-meta">89% H · $32K · 625 biz</span>
+    </div>
+    <div class="cell heat-5"><span class="opportunity">🔥 A+</span><span class="competition">Comp: Near zero</span><span class="verdict verdict-diamond">DIAMOND</span></div>
+    <div class="cell heat-5"><span class="opportunity">🔥 A+</span><span class="competition">Comp: Near zero</span><span class="verdict verdict-diamond">DIAMOND</span></div>
+    <div class="cell heat-3"><span class="opportunity">✅ B+</span><span class="competition">Comp: LOW</span><span class="verdict verdict-good">GOOD</span></div>
+    <div class="cell heat-3"><span class="opportunity">✅ B+</span><span class="competition">Comp: LOW</span><span class="verdict verdict-good">GOOD</span></div>
+    <div class="cell heat-5"><span class="opportunity">🔥 A+</span><span class="competition">Comp: ZERO</span><span class="verdict verdict-diamond">DIAMOND</span></div>
+    <div class="cell heat-5"><span class="opportunity">🔥 A+</span><span class="competition">Comp: ZERO</span><span class="verdict verdict-diamond">DIAMOND</span></div>
+    <div class="cell heat-5"><span class="opportunity">🔥 A+</span><span class="competition">Comp: Near zero</span><span class="verdict verdict-diamond">DIAMOND</span></div>
+    <div class="cell heat-3"><span class="opportunity">✅ B+</span><span class="competition">Comp: LOW</span><span class="verdict verdict-good">GOOD</span></div>
+
+    <!-- 78228 — Good but contested -->
+    <div class="cell-zip">
+      <span class="zip-code">78228</span>
+      <span class="zip-meta">89% H · $53K · 681 biz</span>
+    </div>
+    <div class="cell heat-3"><span class="opportunity">✅ B+</span><span class="competition">Comp: Moderate</span><span class="verdict verdict-contested">CONTESTED</span></div>
+    <div class="cell heat-3"><span class="opportunity">✅ B+</span><span class="competition">Comp: Moderate</span><span class="verdict verdict-contested">CONTESTED</span></div>
+    <div class="cell heat-4"><span class="opportunity">🔥 A</span><span class="competition">Comp: Low-Moderate</span><span class="verdict verdict-good">GOOD</span></div>
+    <div class="cell heat-4"><span class="opportunity">🔥 A</span><span class="competition">Comp: Low-Moderate</span><span class="verdict verdict-good">GOOD</span></div>
+    <div class="cell heat-2"><span class="opportunity">✅ B</span><span class="competition">Comp: Moderate</span><span class="verdict verdict-contested">CONTESTED</span></div>
+    <div class="cell heat-2"><span class="opportunity">✅ B</span><span class="competition">Comp: Moderate</span><span class="verdict verdict-contested">CONTESTED</span></div>
+    <div class="cell heat-3"><span class="opportunity">🔥 A-</span><span class="competition">Comp: Low</span><span class="verdict verdict-good">GOOD</span></div>
+    <div class="cell heat-2"><span class="opportunity">✅ B</span><span class="competition">Comp: Moderate</span><span class="verdict verdict-contested">CONTESTED</span></div>
+
+    <!-- 78211 — Crowding -->
+    <div class="cell-zip">
+      <span class="zip-code">78211</span>
+      <span class="zip-meta">94% H · $55K · 321 biz</span>
+    </div>
+    <div class="cell heat-2"><span class="opportunity">✅ B</span><span class="competition">Comp: Growing</span><span class="verdict verdict-contested">CONTESTED</span></div>
+    <div class="cell heat-2"><span class="opportunity">✅ B</span><span class="competition">Comp: Growing</span><span class="verdict verdict-contested">CONTESTED</span></div>
+    <div class="cell heat-4"><span class="opportunity">🔥 A</span><span class="competition">Comp: Low</span><span class="verdict verdict-good">GOOD</span></div>
+    <div class="cell heat-4"><span class="opportunity">🔥 A</span><span class="competition">Comp: Low</span><span class="verdict verdict-good">GOOD</span></div>
+    <div class="cell heat-2"><span class="opportunity">✅ B</span><span class="competition">Comp: Growing</span><span class="verdict verdict-contested">CONTESTED</span></div>
+    <div class="cell heat-2"><span class="opportunity">✅ B</span><span class="competition">Comp: Growing</span><span class="verdict verdict-contested">CONTESTED</span></div>
+    <div class="cell heat-2"><span class="opportunity">✅ B</span><span class="competition">Comp: Low</span><span class="verdict verdict-contested">CONTESTED</span></div>
+    <div class="cell heat-2"><span class="opportunity">✅ B-</span><span class="competition">Comp: Moderate</span><span class="verdict verdict-contested">CONTESTED</span></div>
+  </div>
+
+  <!-- INNER CUBE: Competitive Landscape -->
+  <h3>Inner Cube — Who's Fishing These Waters</h3>
+
+  <div class="inner-cube">
+    <div class="competitor-row">
+      <div class="comp-header">Competitor</div>
+      <div class="comp-header">Type</div>
+      <div class="comp-header">Bilingual</div>
+      <div class="comp-header">Turnkey</div>
+      <div class="comp-header">Affordable</div>
+      <div class="comp-header">Lead Gen</div>
+      <div class="comp-header">Our Edge</div>
+    </div>
+
+    <div class="competitor-row">
+      <div class="comp-cell comp-name" style="color: var(--contest);">⚠️ The Social Being</div>
+      <div class="comp-cell">Digital Agency</div>
+      <div class="comp-cell check">YES</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell x">NO ($1K+/mo)</div>
+      <div class="comp-cell check">YES</div>
+      <div class="comp-cell">IN 78207. 25yr, minority-cert, bilingual. But digital-only, no EDDM, no voice. Different league — possible referral partner.</div>
+    </div>
+
+    <div class="competitor-row">
+      <div class="comp-cell comp-name">Chamoy Creative</div>
+      <div class="comp-cell">Brand Agency</div>
+      <div class="comp-cell check">YES</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell x">NO ($5K+/mo)</div>
+      <div class="comp-cell partial">PARTIAL</div>
+      <div class="comp-cell">Serves brands, not mom-and-pop. No EDDM, no voice agent.</div>
+    </div>
+
+    <div class="competitor-row">
+      <div class="comp-cell comp-name">Muchisimo</div>
+      <div class="comp-cell">Digital Agency</div>
+      <div class="comp-cell check">YES</div>
+      <div class="comp-cell partial">PARTIAL</div>
+      <div class="comp-cell x">NO ($1K+/mo)</div>
+      <div class="comp-cell check">YES</div>
+      <div class="comp-cell">Closest threat. Bilingual + AI CRM. But digital-only, no direct mail, no voice.</div>
+    </div>
+
+    <div class="competitor-row">
+      <div class="comp-cell comp-name">Abby Connect</div>
+      <div class="comp-cell">Answering Svc</div>
+      <div class="comp-cell check">YES</div>
+      <div class="comp-cell partial">PARTIAL</div>
+      <div class="comp-cell partial">$99-329/mo</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell">Reactive only. Answers phone but doesn't generate leads or mail.</div>
+    </div>
+
+    <div class="competitor-row">
+      <div class="comp-cell comp-name">Smith.ai</div>
+      <div class="comp-cell">AI + Human Svc</div>
+      <div class="comp-cell check">YES</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell partial">$95/mo (30 calls)</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell">Good AI tech. Service, not partner. No EDDM, no strategy.</div>
+    </div>
+
+    <div class="competitor-row">
+      <div class="comp-cell comp-name">AlphaGraphics</div>
+      <div class="comp-cell">Print Shop</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell partial">PARTIAL</div>
+      <div class="comp-cell check">YES</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell">Prints and mails EDDM. No bilingual, no AI, no strategy.</div>
+    </div>
+
+    <div class="competitor-row">
+      <div class="comp-cell comp-name">UPS Store</div>
+      <div class="comp-cell">Print Shop</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell partial">PARTIAL</div>
+      <div class="comp-cell check">YES</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell">Same as AlphaGraphics. Fulfillment, not marketing.</div>
+    </div>
+
+    <div class="competitor-row">
+      <div class="comp-cell comp-name">Accu-Print</div>
+      <div class="comp-cell">Print Shop</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell partial">PARTIAL</div>
+      <div class="comp-cell check">YES</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell">Local SA printer. EDDM capable. No bilingual, no AI.</div>
+    </div>
+
+    <div class="competitor-row">
+      <div class="comp-cell comp-name">Southtown Designs</div>
+      <div class="comp-cell">GMB / SEO</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell x">NO</div>
+      <div class="comp-cell partial">PARTIAL</div>
+      <div class="comp-cell">English-only SEO/GMB. Doesn't serve Hispanic market at all.</div>
+    </div>
+
+    <div class="competitor-row" style="border-top: 2px solid var(--diamond); margin-top: 8px;">
+      <div class="comp-cell comp-name" style="color: var(--diamond);">Targeted Design</div>
+      <div class="comp-cell" style="color: var(--diamond);">EDDM + Voice</div>
+      <div class="comp-cell check">YES</div>
+      <div class="comp-cell check">YES</div>
+      <div class="comp-cell check">$150-1K/mo</div>
+      <div class="comp-cell check">YES</div>
+      <div class="comp-cell" style="color: var(--diamond);">4-axis alignment. Nobody else has all four.</div>
+    </div>
+  </div>
+
+  <!-- ZIP RANKING — Drop Order -->
+  <h3>Corrected Drop Order — Competition Weight Applied</h3>
+
+  <div class="zip-ranking">
+    <div class="rank-card rank-1">
+      <span class="rank-num">#1</span>
+      <div class="zip-code">78237</div>
+      <div class="stats">
+        <div><div class="stat-label">Hispanic</div><div class="stat-value">95%</div></div>
+        <div><div class="stat-label">Income</div><div class="stat-value">$43K</div></div>
+        <div><div class="stat-label">Businesses</div><div class="stat-value">330</div></div>
+        <div><div class="stat-label">Competition</div><div class="stat-value" style="color:var(--diamond)">ZERO</div></div>
+      </div>
+      <div class="why">Nobody wants this ZIP. Too Spanish for English-only shops, too small for $5K/mo agencies, too blue-collar for brand marketers. That's exactly why it's ours. Every call in Spanish. Every door underserved.</div>
+    </div>
+
+    <div class="rank-card rank-2">
+      <span class="rank-num">#2</span>
+      <div class="zip-code">78207</div>
+      <div class="stats">
+        <div><div class="stat-label">Hispanic</div><div class="stat-value">89%</div></div>
+        <div><div class="stat-label">Income</div><div class="stat-value">$32K</div></div>
+        <div><div class="stat-label">Businesses</div><div class="stat-value">625</div></div>
+        <div><div class="stat-label">Competition</div><div class="stat-value" style="color:var(--diamond)">Near zero</div></div>
+      </div>
+      <div class="why">Same story — "poor" ZIP that agencies skip. But 625 businesses with phone lines that ring unanswered in Spanish. The $32K income means they CAN'T afford a bilingual receptionist. We're not upselling luxury — we're solving the most basic pain.</div>
+    </div>
+
+    <div class="rank-card rank-3">
+      <span class="rank-num">#3</span>
+      <div class="zip-code">78228</div>
+      <div class="stats">
+        <div><div class="stat-label">Hispanic</div><div class="stat-value">89%</div></div>
+        <div><div class="stat-label">Income</div><div class="stat-value">$53K</div></div>
+        <div><div class="stat-label">Businesses</div><div class="stat-value">681</div></div>
+        <div><div class="stat-label">Competition</div><div class="stat-value" style="color:var(--contest)">Moderate</div></div>
+      </div>
+      <div class="why">Higher income means agencies notice this ZIP. Muchisimo and Chamoy fish here. Still strong for HVAC and landscaping (nobody does bilingual voice there), but restaurant/barber cells are contested.</div>
+    </div>
+
+    <div class="rank-card rank-4">
+      <span class="rank-num">#4</span>
+      <div class="zip-code">78211</div>
+      <div class="stats">
+        <div><div class="stat-label">Hispanic</div><div class="stat-value">94%</div></div>
+        <div><div class="stat-label">Income</div><div class="stat-value">$55K</div></div>
+        <div><div class="stat-label">Businesses</div><div class="stat-value">321</div></div>
+        <div><div class="stat-label">Competition</div><div class="stat-value" style="color:var(--accent)">Growing</div></div>
+      </div>
+      <div class="why">$55K + 94% Hispanic = every agency smells money. Harlandale is getting discovered. HVAC and plumbing still have a window (emergency Spanish = moat), but the clock is running.</div>
+    </div>
+  </div>
+
+  <!-- INSIGHTS -->
+  <h3>What The Pattern Reveals</h3>
+
+  <div class="insight" style="border-left-color: var(--contest);">
+    <h4>⚠️ The Social Being — In-ZIP Competitor in 78207</h4>
+    <p>TSB is bilingual, minority-owned, 25 years, community-connected, right in 78207. BUT: they sell digital at $1K+/mo. We sell EDDM + voice at $150-550/mo. Different product, different buyer. The $32K restaurant owner can't afford TSB. They can afford us. TSB may even become a referral partner — when our clients grow enough to need digital, we send them up.</p>
+  </div>
+
+  <div class="insight">
+    <h4>The Diamond Is Where Nobody Else Will Go</h4>
+    <p>78237 and 78207 aren't poor picks — they're the MOST protected picks. Competition density is the fourth axis of the tesseract. A ZIP with 95% Hispanic and zero competitors isn't just an opportunity. It's a moat. The agencies that skip these ZIPs because "$32K can't afford us" are creating our defensibility.</p>
+  </div>
+
+  <div class="insight">
+    <h4>The Window Is Closing on 78211</h4>
+    <p>$55K median income + 94% Hispanic = every agency in SA will discover Harlandale within 12 months. The HVAC and plumbing intersections are still open because emergency Spanish calls haven't been productized yet. That window exists because nobody has combined EDDM + bilingual AI voice. Once we ship, others will copy. First mover advantage is real — but only if we move NOW.</p>
+  </div>
+
+  <div class="insight">
+    <h4>Nobody Has All Four Axes</h4>
+    <p>Bilingual? Chamoy, Muchisimo, Abby, Smith.ai — yes. Turnkey? Only print shops, and they can't do bilingual. Affordable? Only print shops and Smith.ai at the low end. Lead generation? Only Muchisimo, but they charge $1K+/mo. The intersection of all four — bilingual + turnkey + affordable + proactive lead gen — is empty. That's not a gap. That's the business.</p>
+  </div>
+
+  <div class="insight">
+    <h4>Drop Order Flips</h4>
+    <p>Original priority: 78228 → 78207 → 78237 → 78211. Competition-weighted: 78237 → 78207 → 78228 → 78211. Same ZIPs. Different order. The lowest-income, highest-Hispanic ZIPs go FIRST because that's where the moat is deepest and the window is widest.</p>
+  </div>
+
+</div>
+</body>
+</html>

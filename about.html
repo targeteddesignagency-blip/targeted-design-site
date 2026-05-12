@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Targeted Design | AI-Powered EDDM Agency | San Antonio, TX</title>
+    <meta name="description" content="Meet the Targeted Design Agency team — AI-driven operations, human-backed results. EDDM marketing for San Antonio businesses.">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --black:#000000;
+            --dark:#333132;
+            --red:#fe1616;
+            --white:#ffffff;
+            --gray:#999;
+            --light-gray:#ccc;
+        }
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--black);color:var(--white);line-height:1.6;overflow-x:hidden}
+        a{color:var(--white);text-decoration:none}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+        /* --- NAV --- */
+        nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(254,22,22,.15);padding:0 24px}
+        nav .container{display:flex;justify-content:space-between;align-items:center;height:64px}
+        .logo{font-size:1.25rem;font-weight:800;letter-spacing:-.5px;color:var(--white)}
+        .logo span{color:var(--red)}
+        .nav-links{display:flex;gap:28px;align-items:center}
+        .nav-links a{font-size:.875rem;font-weight:500;color:var(--light-gray);transition:color .2s}
+        .nav-links a:hover{color:var(--red)}
+        .nav-links a.active{color:var(--red)}
+        .nav-cta{background:var(--red);color:var(--white)!important;padding:8px 20px;border-radius:6px;font-weight:600;font-size:.875rem;transition:transform .15s,box-shadow .2s}
+        .nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(254,22,22,.4)}
+        .menu-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+
+        /* --- HERO --- */
+        .hero{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative}
+        .hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(254,22,22,.08) 0%,transparent 70%);pointer-events:none}
+        .hero h1{font-size:clamp(2.25rem,5vw,3.5rem);font-weight:800;line-height:1.1;margin-bottom:24px;letter-spacing:-1px}
+        .hero h1 em{color:var(--red);font-style:normal}
+        .hero p{font-size:clamp(1rem,2vw,1.25rem);color:var(--light-gray);max-width:600px;margin:0 auto 40px}
+        .tagline{font-size:1.1rem;color:var(--light-gray);font-style:italic;margin-top:-20px;margin-bottom:40px}
+        .tagline em{color:var(--red);font-style:italic}
+
+        /* --- SECTION --- */
+        section{padding:80px 24px}
+        .section-label{color:var(--red);font-weight:700;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+        .section-title{font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:800;margin-bottom:16px;letter-spacing:-.5px}
+        .section-sub{color:var(--light-gray);font-size:1.05rem;max-width:560px;margin-bottom:60px}
+
+        /* --- VALUES --- */
+        .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:80px}
+        .value-card{background:var(--dark);border-radius:12px;padding:32px 24px;border:1px solid rgba(255,255,255,.05);transition:border-color .3s,transform .2s}
+        .value-card:hover{border-color:rgba(254,22,22,.25);transform:translateY(-4px)}
+        .value-icon{font-size:2rem;margin-bottom:16px}
+        .value-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+        .value-card p{color:var(--light-gray);font-size:.9rem;line-height:1.6}
+
+        /* --- TEAM --- */
+        .team-section{padding:80px 0}
+        .team-dept{margin-bottom:48px}
+        .team-dept-title{font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:20px;padding-bottom:8px;border-bottom:1px solid rgba(254,22,22,.2)}
+        .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+        .team-card{background:var(--dark);border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.05);transition:border-color .3s,transform .2s}
+        .team-card:hover{border-color:rgba(254,22,22,.3);transform:translateY(-4px)}
+        .team-photo{width:100%;aspect-ratio:1;object-fit:cover;filter:grayscale(.3);transition:filter .3s}
+        .team-card:hover .team-photo{filter:grayscale(0)}
+        .team-info{padding:16px}
+        .team-info h4{font-size:.95rem;font-weight:700;margin-bottom:2px}
+        .team-info .role{font-size:.8rem;color:var(--red);font-weight:600;margin-bottom:4px}
+        .team-info .desc{font-size:.8rem;color:var(--gray);line-height:1.4}
+
+        /* --- VENN CTA --- */
+        .venn-cta{text-align:center;background:linear-gradient(135deg,var(--dark) 0%,rgba(254,22,22,.08) 100%);border-radius:24px;padding:80px 40px;margin:0 auto;max-width:1000px}
+        .venn-cta h2{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;margin-bottom:16px}
+        .venn-cta p{color:var(--light-gray);margin-bottom:32px;font-size:1.05rem}
+        .btn{display:inline-block;padding:16px 36px;border-radius:8px;font-weight:700;font-size:1rem;transition:all .2s;cursor:pointer}
+        .btn-primary{background:var(--red);color:var(--white);box-shadow:0 4px 24px rgba(254,22,22,.35)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(254,22,22,.5)}
+        .btn-outline{border:2px solid var(--red);color:var(--red);background:transparent}
+        .btn-outline:hover{background:var(--red);color:var(--white)}
+
+        /* --- FOOTER --- */
+        footer{border-top:1px solid rgba(255,255,255,.06);padding:40px 24px;text-align:center}
+        footer p{color:var(--gray);font-size:.85rem;margin-bottom:8px}
+        footer a{color:var(--red);transition:color .2s}
+        footer a:hover{color:var(--white)}
+
+        /* --- RESPONSIVE --- */
+        @media(max-width:900px){
+            .values-grid{grid-template-columns:1fr 1fr}
+            .team-grid{grid-template-columns:repeat(2,1fr)}
+        }
+        @media(max-width:600px){
+            .values-grid{grid-template-columns:1fr}
+            .team-grid{grid-template-columns:1fr}
+            .nav-links{display:none}
+            .menu-toggle{display:block}
+            .hero{padding:100px 16px 60px}
+            .venn-cta{padding:48px 24px}
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+        .fade-up{animation:fadeUp .6s ease-out both}
+        .delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}.delay-4{animation-delay:.4s}
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="container">
+        <div class="logo">Targeted<span>.</span>Design</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="venn-diagram.html">How We Work</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="https://td-square-checkout.targeted-design-agency.workers.dev/api/payment-link?package=Standard" class="nav-cta">Get Started</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1 class="fade-up">Built Different<br>in <em>San Antonio</em></h1>
+        <p class="tagline fade-up delay-1">Partnership, not service. <em>Asociados, no proveedores.</em></p>
+        <p class="fade-up delay-2" style="max-width:560px;margin:0 auto">AI-powered operations meet human-driven strategy. We reach 5,000+ homes per mail drop — and every call gets answered.</p>
+    </div>
+</section>
+
+<!-- VALUES -->
+<section>
+    <div class="container">
+        <div class="section-label">What Drives Us</div>
+        <div class="section-title">Six values, one mission.</div>
+        <div class="values-grid">
+            <div class="value-card fade-up">
+                <div class="value-icon">📬</div>
+                <h3>Every Door, Every Time</h3>
+                <p>No mailing lists needed. EDDM reaches every home in your target ZIP — 5,000+ households per drop.</p>
+            </div>
+            <div class="value-card fade-up delay-1">
+                <div class="value-icon">🤝</div>
+                <h3>Partnership First</h3>
+                <p>We're not a vendor — we're your marketing partner. Bilingual by default because San Antonio deserves it.</p>
+            </div>
+            <div class="value-card fade-up delay-2">
+                <div class="value-icon">🤖</div>
+                <h3>AI-Powered, Human-Led</h3>
+                <p>AI handles the 24/7 — calls, follow-ups, scheduling. Humans handle the strategy and relationships.</p>
+            </div>
+            <div class="value-card fade-up delay-3">
+                <div class="value-icon">✅</div>
+                <h3>Zero Rejections</h3>
+                <p>Every design is USPS-compliant before it goes to print. No costly re-dos, no wasted drops.</p>
+            </div>
+            <div class="value-card fade-up delay-4">
+                <div class="value-icon">🗣️</div>
+                <h3>Bilingual by Default</h3>
+                <p>Spanish-first communities need Spanish-first marketing. Our AI answers calls in either language, 24/7.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">📊</div>
+                <h3>Track Everything</h3>
+                <p>From card design to mailbox — every step is logged, attributed, and optimized for the next drop.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+    <div class="container">
+        <div class="section-label">The Team</div>
+        <div class="section-title">15 agents. One mission.</div>
+        <p class="section-sub">From strategy to print to compliance — every role covered, every call answered.</p>
+
+        <!-- Executive Leadership -->
+        <div class="team-dept">
+            <div class="team-dept-title">🎯 Executive Leadership</div>
+            <div class="team-grid">
+                <div class="team-card fade-up">
+                    <img src="team/alex-sterling.jpg" alt="Alex Sterling" class="team-photo">
+                    <div class="team-info">
+                        <h4>Alex Sterling</h4>
+                        <div class="role">CEO</div>
+                        <div class="desc">Warm but sharp. Coordinates seven agents, owns the strategy.</div>
+                    </div>
+                </div>
+                <div class="team-card fade-up delay-1">
+                    <img src="team/nova-chen.jpg" alt="Nova Chen" class="team-photo">
+                    <div class="team-info">
+                        <h4>Nova Chen</h4>
+                        <div class="role">COO</div>
+                        <div class="desc">Operations backbone. Every deadline met, every process tight.</div>
+                    </div>
+                </div>
+                <div class="team-card fade-up delay-2">
+                    <img src="team/river-mitchell.jpg" alt="River Mitchell" class="team-photo">
+                    <div class="team-info">
+                        <h4>River Mitchell</h4>
+                        <div class="role">CMO</div>
+                        <div class="desc">The closer. Where Design, Compliance, and Operations overlap — River closes the deal.</div>
+                    </div>
+                </div>
+                <div class="team-card fade-up delay-3">
+                    <img src="team/echo-hayes.jpg" alt="Echo Hayes" class="team-photo">
+                    <div class="team-info">
+                        <h4>Echo Hayes</h4>
+                        <div class="role">CFO</div>
+                        <div class="desc">Pricing, margins, revenue tracking. Every dollar accounted for.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design Team -->
+        <div class="team-dept">
+            <div class="team-dept-title">🎨 Design Team</div>
+            <div class="team-grid">
+                <div class="team-card fade-up">
+                    <img src="team/iris-nakamura.jpg" alt="Iris Nakamura" class="team-photo">
+                    <div class="team-info">
+                        <h4>Iris Nakamura</h4>
+                        <div class="role">Design Director</div>
+                        <div class="desc">Card design, brand assets, visual identity. Every pixel intentional.</div>
+                    </div>
+                </div>
+                <div class="team-card fade-up delay-1">
+                    <img src="team/kai-moreno.jpg" alt="Kai Moreno" class="team-photo">
+                    <div class="team-info">
+                        <h4>Kai Moreno</h4>
+                        <div class="role">Video Writer</div>
+                        <div class="desc">Scripts, storyboards, Remotion compositions. Motion tells the story.</div>
+                    </div>
+                </div>
+                <div class="team-card fade-up delay-2">
+                    <img src="team/luna-park.jpg" alt="Luna Park" class="team-photo">
+                    <div class="team-info">
+                        <h4>Luna Park</h4>
+                        <div class="role">Image Designer</div>
+                        <div class="desc">Lifestyle renders, product photography, visual mockups.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research & Sales -->
+        <div class="team-dept">
+            <div class="team-dept-title">🦉 Research & Sales</div>
+            <div class="team-grid">
+                <div class="team-card fade-up">
+                    <img src="team/sage-mitchell.jpg" alt="Sage Mitchell" class="team-photo">
+                    <div class="team-info">
+                        <h4>Sage Mitchell</h4>
+                        <div class="role">Research Director</div>
+                        <div class="desc">Market intel, ZIP analysis, competitive mapping. Data tells the story.</div>
+                    </div>
+                </div>
+                <div class="team-card fade-up delay-1">
+                    <img src="team/marcus-webb.jpg" alt="Marcus Webb" class="team-photo">
+                    <div class="team-info">
+                        <h4>Marcus Webb</h4>
+                        <div class="role">Head of Sales</div>
+                        <div class="desc">Lead qualification, outreach sequences, pipeline management.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compliance Team -->
+        <div class="team-dept">
+            <div class="team-dept-title">✅ Compliance Team</div>
+            <div class="team-grid">
+                <div class="team-card fade-up">
+                    <img src="team/quinn-washington.jpg" alt="Quinn Washington" class="team-photo">
+                    <div class="team-info">
+                        <h4>Quinn Washington</h4>
+                        <div class="role">Compliance Director</div>
+                        <div class="desc">Regulatory oversight, legal, privacy. Every card ships USPS-compliant.</div>
+                    </div>
+                </div>
+                <div class="team-card fade-up delay-1">
+                    <img src="team/derek-cole.jpg" alt="Derek Cole" class="team-photo">
+                    <div class="team-info">
+                        <h4>Derek Cole</h4>
+                        <div class="role">Code Compliance</div>
+                        <div class="desc">Technical standards, accessibility, digital compliance.</div>
+                    </div>
+                </div>
+                <div class="team-card fade-up delay-2">
+                    <img src="team/piper-hale.jpg" alt="Piper Hale" class="team-photo">
+                    <div class="team-info">
+                        <h4>Piper Hale</h4>
+                        <div class="role">Print Compliance</div>
+                        <div class="desc">USPS specs, bleed, indicia, carrier route verification. Zero rejected drops.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ops & Technology -->
+        <div class="team-dept">
+            <div class="team-dept-title">🔧 Ops & Technology</div>
+            <div class="team-grid">
+                <div class="team-card fade-up">
+                    <img src="team/jordan-reed.jpg" alt="Jordan Reed" class="team-photo">
+                    <div class="team-info">
+                        <h4>Jordan Reed</h4>
+                        <div class="role">CTO</div>
+                        <div class="desc">Infrastructure, integrations, system architecture. The stack runs itself.</div>
+                    </div>
+                </div>
+                <div class="team-card fade-up delay-1">
+                    <img src="team/atlas-warren.jpg" alt="Atlas Warren" class="team-photo">
+                    <div class="team-info">
+                        <h4>Atlas Warren</h4>
+                        <div class="role">R&D</div>
+                        <div class="desc">Model research, hardware benchmarks, what's next in AI for local business.</div>
+                    </div>
+                </div>
+                <div class="team-card fade-up delay-2">
+                    <img src="team/worthington-miles.jpg" alt="Worthington Miles" class="team-photo">
+                    <div class="team-info">
+                        <h4>Worthington Miles</h4>
+                        <div class="role">Crypto Manager</div>
+                        <div class="desc">Digital payments, cryptocurrency integration, financial ops automation.</div>
+                    </div>
+                </div>
+                <div class="team-card fade-up delay-3">
+                    <img src="team/carmen-diaz.jpg" alt="Carmen Diaz" class="team-photo">
+                    <div class="team-info">
+                        <h4>Carmen Diaz</h4>
+                        <div class="role">Operations Lead</div>
+                        <div class="desc">Day-to-day execution, print coordination, USPS logistics.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section>
+    <div class="container">
+        <div class="venn-cta fade-up">
+            <div class="section-label">How We Work</div>
+            <h2>Design. Compliance. Operations.<br>The overlap is the deal.</h2>
+            <p>Our three teams don't just work in parallel — they overlap. Where they intersect, River closes.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+                <a href="venn-diagram.html" class="btn btn-outline">See How We Work</a>
+                <a href="batch-001-decision-matrix.html" class="btn btn-outline">Batch 001 Strategy</a>
+                <a href="https://td-square-checkout.targeted-design-agency.workers.dev/api/payment-link?package=Standard" class="btn btn-primary">Start Your Campaign</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Targeted Design Agency &middot; San Antonio, TX &middot; <a href="tel:+12109035551">(210) 903-5551</a></p>
+        <p><a href="index.html">Home</a> &middot; <a href="about.html">About</a> &middot; <a href="terms.html">Terms of Service</a> &middot; <a href="privacy.html">Privacy Policy</a></p>
+        <p style="color:var(--gray);font-size:.75rem">Every Door Direct Mail&reg; and EDDM&reg; are registered trademarks of the United States Postal Service.</p>
+    </div>
+</footer>
+
+</body>
+</html>

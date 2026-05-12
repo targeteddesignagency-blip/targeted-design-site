@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>EDDM Postcard Back — Batch 001 Spanish (Address Side)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;600;700&display=swap');
+
+  /* ===== DESIGN TOKENS ===== */
+  :root {
+    --brand-primary: #fe1616;
+    --brand-dark: #000000;
+    --brand-surface: #333132;
+    --brand-text: #ffffff;
+    --brand-muted: #999999;
+    --font-headline: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Print dimensions at 300 DPI */
+    --bleed: 18.75px;       /* 0.0625" per side at 300dpi */
+    --trim-w: 3600px;       /* 12" at 300dpi */
+    --trim-h: 2700px;       /* 9" at 300dpi */
+    --safe: 75px;           /* 0.25" inside trim at 300dpi */
+
+    /* USPS EDDM clear zone: 4.5"×2.75" lower-right */
+    /* At 300dpi: 1350px × 825px */
+    /* From right edge: 1350px, from bottom: 825px */
+    --clear-w: 1350px;
+    --clear-h: 825px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 100%;
+    background: #2a2a2a;
+  }
+
+  /* ===== BLEED PAGE (full page including bleed area) ===== */
+  .page {
+    width: calc(var(--trim-w) + var(--bleed) * 2);   /* 3637.5px */
+    height: calc(var(--trim-h) + var(--bleed) * 2);  /* 2737.5px */
+    position: relative;
+    background: #2a2a2a;
+    margin: 0 auto;
+  }
+
+  /* ===== TRIM AREA (12"×9" = 3600×2700) ===== */
+  .card {
+    position: absolute;
+    top: var(--bleed);
+    left: var(--bleed);
+    width: var(--trim-w);
+    height: var(--trim-h);
+    background: var(--brand-dark);
+    color: var(--brand-text);
+    font-family: var(--font-body);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 180px 210px 150px;
+  }
+
+  /* Bleed extension — fills bleed area with background color */
+  .bleed-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--brand-dark);
+    z-index: 0;
+  }
+  .card { z-index: 1; }
+
+  /* ===== USPS INDICIA BLOCK — UPPER RIGHT ===== */
+  /* Per EDDM specs: within 1.625" from right edge, within 1.375" from top */
+  .indicia {
+    position: absolute;
+    top: 60px;           /* ~0.2" from top edge of card (within 1.375" zone) */
+    right: 60px;         /* ~0.2" from right edge (within 1.625" zone) */
+    border: 2px solid var(--brand-muted);
+    padding: 18px 30px;
+    font-family: var(--font-body);
+    font-size: 24px;     /* ~8pt at 300dpi */
+    color: var(--brand-muted);
+    text-align: center;
+    line-height: 1.7;
+    letter-spacing: 1.5px;
+    z-index: 50;
+  }
+
+  /* ===== USPS ADDRESS BLOCK — LOWER RIGHT (inside clear zone) ===== */
+  .address-block {
+    position: absolute;
+    bottom: 180px;       /* inside clear zone */
+    right: 210px;        /* inside clear zone */
+    font-family: var(--font-body);
+    font-size: 42px;     /* ~14pt, large for readability */
+    font-weight: 700;
+    color: var(--brand-text);
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    z-index: 50;
+  }
+
+  /* ===== CLEAR ZONE GUIDE (remove for production) ===== */
+  .clear-zone {
+    position: absolute;
+    bottom: var(--bleed);                      /* align to trim bottom */
+    right: var(--bleed);                        /* align to trim right */
+    width: var(--clear-w);
+    height: var(--clear-h);
+    border: 2px dashed rgba(255,0,0,0.4);
+    pointer-events: none;
+    z-index: 190;
+  }
+  .clear-zone-label {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    font-size: 18px;
+    color: rgba(255,0,0,0.5);
+    font-family: sans-serif;
+  }
+
+  /* Safe zone guide */
+  .guide-safe {
+    position: absolute;
+    top: calc(var(--bleed) + var(--safe));
+    left: calc(var(--bleed) + var(--safe));
+    right: calc(var(--bleed) + var(--safe));
+    bottom: calc(var(--bleed) + var(--safe));
+    border: 1.5px dashed rgba(0,255,0,0.35);
+    pointer-events: none;
+    z-index: 200;
+  }
+  /* Trim line guide */
+  .guide-trim {
+    position: absolute;
+    top: var(--bleed);
+    left: var(--bleed);
+    width: var(--trim-w);
+    height: var(--trim-h);
+    border: 1px dashed rgba(0,200,255,0.25);
+    pointer-events: none;
+    z-index: 200;
+  }
+
+  /* ===== LOGO BLOCK ===== */
+  .logo-block {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .logo-block .logo-mark {
+    font-family: var(--font-headline);
+    font-size: 126px;
+    font-weight: 900;
+    color: var(--brand-text);
+    letter-spacing: -3px;
+    line-height: 1;
+  }
+  .logo-block .logo-mark span {
+    color: var(--brand-primary);
+  }
+  .logo-block .logo-url {
+    font-size: 39px;
+    color: var(--brand-muted);
+    letter-spacing: 9px;
+    text-transform: uppercase;
+    margin-top: 12px;
+  }
+
+  /* ===== HOOK / HEADLINE (Spanish) ===== */
+  .hook {
+    text-align: center;
+    margin: 45px 0 60px;
+  }
+  .hook h1 {
+    font-family: var(--font-headline);
+    font-size: 132px;     /* slightly smaller to fit longer Spanish text */
+    font-weight: 900;
+    line-height: 1.08;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--brand-text);
+  }
+  .hook h1 .accent {
+    color: var(--brand-primary);
+  }
+
+  /* ===== INDUSTRY GRID ===== */
+  /* Content avoids clear zone — grid is centered with enough leftward offset */
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 36px;
+    width: 100%;
+    max-width: 2940px;
+    margin: 30px 0;
+  }
+  .industry-cell {
+    background: var(--brand-surface);
+    border-radius: 24px;
+    padding: 48px 36px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+  }
+  .industry-cell .icon {
+    font-size: 84px;
+    margin-bottom: 18px;
+    line-height: 1;
+  }
+  .industry-cell .name {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 39px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--brand-text);
+  }
+  .industry-cell .sub {
+    font-size: 30px;
+    color: var(--brand-muted);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== TAGLINE (Spanish) ===== */
+  .tagline {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 600;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    color: var(--brand-muted);
+    margin: 30px 0;
+  }
+
+  /* ===== CTA (Spanish) ===== */
+  .cta {
+    text-align: center;
+    margin-top: 15px;
+  }
+  .cta .cta-label {
+    font-size: 36px;
+    color: var(--brand-muted);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .cta .phone {
+    font-family: var(--font-headline);
+    font-size: 108px;
+    font-weight: 900;
+    color: var(--brand-primary);
+    letter-spacing: 6px;
+    line-height: 1;
+  }
+  .cta .url {
+    font-size: 42px;
+    color: var(--brand-text);
+    letter-spacing: 6px;
+    margin-top: 12px;
+  }
+  .cta .price-line {
+    margin-top: 24px;
+    font-size: 42px;
+    color: var(--brand-muted);
+  }
+  .cta .price-line strong {
+    color: var(--brand-text);
+  }
+  .cta .guarantee {
+    font-size: 33px;
+    color: var(--brand-primary);
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-top: 12px;
+  }
+
+  /* ===== @MEDIA PRINT ===== */
+  @media print {
+    @page {
+      size: 12.125in 9.125in;
+      margin: 0;
+    }
+    html, body {
+      width: 12.125in;
+      height: 9.125in;
+      background: #000;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color-adjust: exact;
+    }
+    .page {
+      width: 12.125in;
+      height: 9.125in;
+      margin: 0;
+    }
+    .card {
+      top: 0.0625in;
+      left: 0.0625in;
+      width: 12in;
+      height: 9in;
+    }
+    .bleed-fill {
+      display: block;
+    }
+    /* Hide guide marks in production print */
+    .guide-safe,
+    .guide-trim,
+    .clear-zone {
+      display: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <!-- Bleed background fill -->
+  <div class="bleed-fill"></div>
+
+  <!-- Production guides (remove for final print) -->
+  <div class="guide-trim"></div>
+  <div class="guide-safe"></div>
+
+  <!-- USPS Clear Zone indicator (remove for production) -->
+  <div class="clear-zone">
+    <div class="clear-zone-label">USPS Clear Zone 4.5"×2.75"</div>
+  </div>
+
+  <!-- TRIM AREA: 12"×9" -->
+  <div class="card">
+
+    <!-- USPS Indicia — Upper Right (EDDM Retail) -->
+    <div class="indicia">
+      ECRWSS<br>
+      EDDM<br>
+      U.S. POSTAGE PAID<br>
+      SAN ANTONIO, TX
+    </div>
+
+    <!-- USPS Address Block — Lower Right (inside clear zone) -->
+    <div class="address-block">
+      LOCAL POSTAL CUSTOMER
+    </div>
+
+    <!-- Logo Block -->
+    <div class="logo-block">
+      <div class="logo-mark">Targeted<span>.</span>Design</div>
+      <div class="logo-url">Cada Puerta · Cada Hogar</div>
+    </div>
+
+    <!-- Hook / Hero Headline (Spanish) -->
+    <div class="hook">
+      <h1>SU TELÉFONO DEBERÍA ESTAR SONANDO.<br><span class="accent">NO EL DE SU COMPETENCIA.</span></h1>
+    </div>
+
+    <!-- Industry Grid: 4×2 (Spanish) -->
+    <div class="industry-grid">
+      <div class="industry-cell">
+        <div class="icon">🌮</div>
+        <div class="name">Restaurantes</div>
+        <div class="sub">Tacos · Taquerías</div>
+      </div>
+      <div class="industry-cell">
+        <div class="icon">🔧</div>
+        <div class="name">Reparación de Autos</div>
+        <div class="sub">Mecánico · Carrocería</div>
+      </div>
+      <div class="industry-cell">
+        <div class="icon">❄️</div>
+        <div class="name">Climatización</div>
+        <div class="sub">AC · Calefacción</div>
+      </div>
+      <div class="industry-cell">
+        <div class="icon">🔩</div>
+        <div class="name">Plomería</div>
+        <div class="sub">Emergencia · Reparación</div>
+      </div>
+      <div class="industry-cell">
+        <div class="icon">💈</div>
+        <div class="name">Salón y Barbería</div>
+        <div class="sub">Belleza · Cortes</div>
+      </div>
+      <div class="industry-cell">
+        <div class="icon">🧒</div>
+        <div class="name">Cuidado Infantil</div>
+        <div class="sub">Aprendizaje · Guardería</div>
+      </div>
+      <div class="industry-cell">
+        <div class="icon">🌿</div>
+        <div class="name">Jardinería</div>
+        <div class="sub">Césped · Paisaje</div>
+      </div>
+      <div class="industry-cell">
+        <div class="icon">🐛</div>
+        <div class="name">Control de Plagas</div>
+        <div class="sub">Exterminador · Insectos</div>
+      </div>
+    </div>
+
+    <!-- Tagline (Spanish) -->
+    <div class="tagline">Cada Puerta · Cada Hogar · Su Próximo Cliente</div>
+
+    <!-- CTA (Spanish) -->
+    <div class="cta">
+      <div class="cta-label">⬇ Llame o Envíe Texto ⬇</div>
+      <div class="phone">(210) 903-5551</div>
+      <div class="url">targeted-design.com</div>
+      <div class="price-line">Desde <strong>$150</strong> · Resultados Garantizados</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
