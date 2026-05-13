@@ -53,6 +53,11 @@
   .connector-line{width:2px;height:40px;background:linear-gradient(to bottom,rgba(254,22,22,.5),rgba(254,22,22,.2));position:relative}
   .connector-line::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;background:var(--red);opacity:.6}
 
+  /* FOUNDER special */
+  .founder-section{display:flex;justify-content:center;width:100%;margin-bottom:40px}
+  .founder-card{display:flex;justify-content:center;width:100%}
+  .org-card.founder{width:240px;border-color:var(--red);box-shadow:0 0 40px rgba(254,22,22,.2)}
+
   /* PULSE ANIMATION ON FOUNDER */
   @keyframes pulse-glow{0%,100%{box-shadow:0 0 20px rgba(254,22,22,.15)}50%{box-shadow:0 0 40px rgba(254,22,22,.3)}}
   .org-card.founder.visible{animation:pulse-glow 3s ease-in-out infinite}
