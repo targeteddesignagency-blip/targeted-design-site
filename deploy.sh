@@ -9,13 +9,13 @@ git add -A
 
 # Commit (use provided message or default)
 MSG="${1:-site update}"
-git commit -m "$MSG"
+git commit -m "$MSG" 2>/dev/null
 
 # Push to git (version control)
-git push origin main
+git push origin main 2>/dev/null
 
-# Deploy to Cloudflare Pages (this is what actually goes live)
-npx wrangler pages deploy . --project-name targeted-design
+# Deploy ONLY the dist/ directory to Cloudflare Pages
+npx wrangler pages deploy dist --project-name targeted-design --commit-dirty=true
 
 echo ""
 echo "✓ Deployed. Verify at https://targeted-design.com"
