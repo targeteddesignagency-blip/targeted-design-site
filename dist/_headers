@@ -1,6 +1,0 @@
-/*
-  Cache-Control: public, max-age=300, s-maxage=300, must-revalidate
-  X-Content-Type-Options: nosniff
-
-/*.html
-  Cache-Control: public, max-age=300, s-maxage=300, must-revalidate
