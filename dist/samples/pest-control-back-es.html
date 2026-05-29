@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>EDDM Postcard Back — Control de Plagas (ES) Address Side</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;600;700&display=swap');
+
+  :root {
+    --brand-primary: #fe1616;
+    --brand-dark: #000000;
+    --brand-surface: #333132;
+    --brand-text: #ffffff;
+    --brand-muted: #999999;
+    --font-headline: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --bleed: 18.75px;
+    --trim-w: 3600px;
+    --trim-h: 2700px;
+    --safe: 75px;
+    --clear-w: 1350px;
+    --clear-h: 825px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; background: #2a2a2a; }
+
+  .page {
+    width: calc(var(--trim-w) + var(--bleed) * 2);
+    height: calc(var(--trim-h) + var(--bleed) * 2);
+    position: relative; background: #2a2a2a; margin: 0 auto;
+  }
+  .card {
+    position: absolute; top: var(--bleed); left: var(--bleed);
+    width: var(--trim-w); height: var(--trim-h);
+    background: var(--brand-dark); color: var(--brand-text);
+    font-family: var(--font-body); overflow: hidden;
+    display: flex; flex-direction: column; padding: 120px 150px;
+  }
+  .bleed-fill { position: absolute; inset: 0; background: var(--brand-dark); z-index: 0; }
+  .card { z-index: 1; }
+
+  .back-header { text-align: center; margin-bottom: 60px; }
+  .back-header .logo-mark {
+    font-family: var(--font-headline); font-size: 72px; font-weight: 900;
+    color: var(--brand-text); letter-spacing: -2px; line-height: 1;
+  }
+  .back-header .logo-mark span { color: var(--brand-primary); }
+
+  .back-content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .back-hero { text-align: center; margin-bottom: 60px; }
+  .back-hero h2 {
+    font-family: var(--font-headline); font-size: 84px; font-weight: 900;
+    line-height: 1.1; text-transform: uppercase; letter-spacing: 2px; color: var(--brand-text);
+  }
+  .back-hero h2 .accent { color: var(--brand-primary); }
+
+  .back-industry {
+    background: var(--brand-surface); border-radius: 24px;
+    padding: 48px 72px; display: flex; align-items: center; gap: 36px;
+    margin-bottom: 48px;
+  }
+  .back-industry .icon { font-size: 72px; line-height: 1; flex-shrink: 0; }
+  .back-industry .info .name {
+    font-family: var(--font-headline); font-size: 42px; font-weight: 800;
+    color: var(--brand-text); text-transform: uppercase; letter-spacing: 2px;
+  }
+  .back-industry .info .sub { font-size: 27px; color: var(--brand-muted); margin-top: 6px; }
+
+  .back-cta { text-align: center; }
+  .back-cta .phone {
+    font-family: var(--font-headline); font-size: 84px; font-weight: 900;
+    color: var(--brand-primary); letter-spacing: 4px; line-height: 1;
+  }
+  .back-cta .url { font-size: 33px; color: var(--brand-text); letter-spacing: 4px; margin-top: 12px; }
+  .back-cta .price { font-size: 33px; color: var(--brand-muted); margin-top: 12px; }
+  .back-cta .price strong { color: var(--brand-text); }
+
+  /* EDDM indicia + clear zone */
+  .eddm-indicia {
+    position: absolute; top: calc(var(--bleed) + 60px); right: calc(var(--bleed) + 90px);
+    text-align: right; z-index: 5;
+  }
+  .eddm-indicia .indicia {
+    font-size: 21px; color: var(--brand-muted); letter-spacing: 2px; text-transform: uppercase;
+  }
+  .eddm-indicia .postmark {
+    font-size: 18px; color: rgba(255,255,255,0.3); margin-top: 6px; letter-spacing: 1px;
+  }
+
+  .clear-zone {
+    position: absolute; bottom: var(--bleed); right: var(--bleed);
+    width: var(--clear-w); height: var(--clear-h);
+    border: 1px dashed rgba(255,255,255,0.1); z-index: 5;
+  }
+  .clear-zone .local {
+    position: absolute; bottom: 30px; right: 48px;
+    font-size: 24px; color: rgba(255,255,255,0.25);
+    text-transform: uppercase; letter-spacing: 4px;
+  }
+
+  @media print {
+    @page { size: 12.125in 9.125in; margin: 0; }
+    html, body { width: 12.125in; height: 9.125in; background: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { width: 12.125in; height: 9.125in; margin: 0; }
+    .card { top: 0.0625in; left: 0.0625in; width: 12in; height: 9in; }
+    .bleed-fill { display: block; }
+    .clear-zone { border: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="bleed-fill"></div>
+  <div class="eddm-indicia">
+    <div class="indicia">ECRWSS</div>
+    <div class="postmark">U.S. POSTAGE PAID · SAN ANTONIO TX</div>
+  </div>
+  <div class="card">
+    <div class="back-header">
+      <div class="logo-mark">Targeted<span>.</span>Design</div>
+    </div>
+    <div class="back-content">
+      <div class="back-hero">
+        <h2>LOS INSECTOS NO TOCAN.<br>SE MUDAN AL LADO.<br>SUS VECINOS LE NECESITAN.</h2>
+      </div>
+      <div class="back-industry">
+        <div class="icon">🐛</div>
+        <div class="info">
+          <div class="name">Control de Plagas</div>
+          <div class="sub">Exterminador &middot; Insectos</div>
+        </div>
+      </div>
+      <div class="back-cta">
+        <div class="phone">(210) 903-5551</div>
+        <div class="url">targeted-design.com</div>
+        <div class="price">Desde <strong>$150</strong> &middot; Resultados Garantizados</div>
+      </div>
+    </div>
+  </div>
+  <div class="clear-zone">
+    <div class="local">LOCAL POSTAL CUSTOMER</div>
+  </div>
+</div>
+</body>
+</html>

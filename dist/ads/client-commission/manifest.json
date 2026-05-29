@@ -1,0 +1,218 @@
+[
+  {
+    "business": "Dutson Pest Control",
+    "slug": "dutson-pest",
+    "tier": "economy",
+    "price": "$150/mo",
+    "en": "dutson-pest/dutson-pest-economy-en.html",
+    "es": "dutson-pest/dutson-pest-economy-es.html",
+    "qr_url": "../qr-codes/dutson-pest-economy.png"
+  },
+  {
+    "business": "Dutson Pest Control",
+    "slug": "dutson-pest",
+    "tier": "fullsize",
+    "price": "$550/mo",
+    "en": "dutson-pest/dutson-pest-fullsize-en.html",
+    "es": "dutson-pest/dutson-pest-fullsize-es.html",
+    "qr_url": "../qr-codes/dutson-pest-fullsize.png"
+  },
+  {
+    "business": "Dutson Pest Control",
+    "slug": "dutson-pest",
+    "tier": "premium",
+    "price": "$1,000/mo",
+    "en": "dutson-pest/dutson-pest-premium-en.html",
+    "es": "dutson-pest/dutson-pest-premium-es.html",
+    "qr_url": "../qr-codes/dutson-pest-premium.png"
+  },
+  {
+    "business": "Carousel Childcare Center",
+    "slug": "carousel-childcare",
+    "tier": "economy",
+    "price": "$150/mo",
+    "en": "carousel-childcare/carousel-childcare-economy-en.html",
+    "es": "carousel-childcare/carousel-childcare-economy-es.html",
+    "qr_url": "../qr-codes/carousel-childcare-economy.png"
+  },
+  {
+    "business": "Carousel Childcare Center",
+    "slug": "carousel-childcare",
+    "tier": "fullsize",
+    "price": "$550/mo",
+    "en": "carousel-childcare/carousel-childcare-fullsize-en.html",
+    "es": "carousel-childcare/carousel-childcare-fullsize-es.html",
+    "qr_url": "../qr-codes/carousel-childcare-fullsize.png"
+  },
+  {
+    "business": "Carousel Childcare Center",
+    "slug": "carousel-childcare",
+    "tier": "premium",
+    "price": "$1,000/mo",
+    "en": "carousel-childcare/carousel-childcare-premium-en.html",
+    "es": "carousel-childcare/carousel-childcare-premium-es.html",
+    "qr_url": "../qr-codes/carousel-childcare-premium.png"
+  },
+  {
+    "business": "Gabe's Priority AC",
+    "slug": "gabes-ac",
+    "tier": "economy",
+    "price": "$150/mo",
+    "en": "gabes-ac/gabes-ac-economy-en.html",
+    "es": "gabes-ac/gabes-ac-economy-es.html",
+    "qr_url": "../qr-codes/gabes-ac-economy.png"
+  },
+  {
+    "business": "Gabe's Priority AC",
+    "slug": "gabes-ac",
+    "tier": "fullsize",
+    "price": "$550/mo",
+    "en": "gabes-ac/gabes-ac-fullsize-en.html",
+    "es": "gabes-ac/gabes-ac-fullsize-es.html",
+    "qr_url": "../qr-codes/gabes-ac-fullsize.png"
+  },
+  {
+    "business": "Gabe's Priority AC",
+    "slug": "gabes-ac",
+    "tier": "premium",
+    "price": "$1,000/mo",
+    "en": "gabes-ac/gabes-ac-premium-en.html",
+    "es": "gabes-ac/gabes-ac-premium-es.html",
+    "qr_url": "../qr-codes/gabes-ac-premium.png"
+  },
+  {
+    "business": "The Grass Company",
+    "slug": "grass-company",
+    "tier": "economy",
+    "price": "$150/mo",
+    "en": "grass-company/grass-company-economy-en.html",
+    "es": "grass-company/grass-company-economy-es.html",
+    "qr_url": "../qr-codes/grass-company-economy.png"
+  },
+  {
+    "business": "The Grass Company",
+    "slug": "grass-company",
+    "tier": "fullsize",
+    "price": "$550/mo",
+    "en": "grass-company/grass-company-fullsize-en.html",
+    "es": "grass-company/grass-company-fullsize-es.html",
+    "qr_url": "../qr-codes/grass-company-fullsize.png"
+  },
+  {
+    "business": "The Grass Company",
+    "slug": "grass-company",
+    "tier": "premium",
+    "price": "$1,000/mo",
+    "en": "grass-company/grass-company-premium-en.html",
+    "es": "grass-company/grass-company-premium-es.html",
+    "qr_url": "../qr-codes/grass-company-premium.png"
+  },
+  {
+    "business": "Buffalo Plumbing Co.",
+    "slug": "buffalo-plumbing",
+    "tier": "economy",
+    "price": "$150/mo",
+    "en": "buffalo-plumbing/buffalo-plumbing-economy-en.html",
+    "es": "buffalo-plumbing/buffalo-plumbing-economy-es.html",
+    "qr_url": "../qr-codes/buffalo-plumbing-economy.png"
+  },
+  {
+    "business": "Buffalo Plumbing Co.",
+    "slug": "buffalo-plumbing",
+    "tier": "fullsize",
+    "price": "$550/mo",
+    "en": "buffalo-plumbing/buffalo-plumbing-fullsize-en.html",
+    "es": "buffalo-plumbing/buffalo-plumbing-fullsize-es.html",
+    "qr_url": "../qr-codes/buffalo-plumbing-fullsize.png"
+  },
+  {
+    "business": "Buffalo Plumbing Co.",
+    "slug": "buffalo-plumbing",
+    "tier": "premium",
+    "price": "$1,000/mo",
+    "en": "buffalo-plumbing/buffalo-plumbing-premium-en.html",
+    "es": "buffalo-plumbing/buffalo-plumbing-premium-es.html",
+    "qr_url": "../qr-codes/buffalo-plumbing-premium.png"
+  },
+  {
+    "business": "Sam's Auto Repair",
+    "slug": "sams-auto",
+    "tier": "economy",
+    "price": "$150/mo",
+    "en": "sams-auto/sams-auto-economy-en.html",
+    "es": "sams-auto/sams-auto-economy-es.html",
+    "qr_url": "../qr-codes/sams-auto-economy.png"
+  },
+  {
+    "business": "Sam's Auto Repair",
+    "slug": "sams-auto",
+    "tier": "fullsize",
+    "price": "$550/mo",
+    "en": "sams-auto/sams-auto-fullsize-en.html",
+    "es": "sams-auto/sams-auto-fullsize-es.html",
+    "qr_url": "../qr-codes/sams-auto-fullsize.png"
+  },
+  {
+    "business": "Sam's Auto Repair",
+    "slug": "sams-auto",
+    "tier": "premium",
+    "price": "$1,000/mo",
+    "en": "sams-auto/sams-auto-premium-en.html",
+    "es": "sams-auto/sams-auto-premium-es.html",
+    "qr_url": "../qr-codes/sams-auto-premium.png"
+  },
+  {
+    "business": "Veteran's Barber Shop",
+    "slug": "veterans-barber",
+    "tier": "economy",
+    "price": "$150/mo",
+    "en": "veterans-barber/veterans-barber-economy-en.html",
+    "es": "veterans-barber/veterans-barber-economy-es.html",
+    "qr_url": "../qr-codes/veterans-barber-economy.png"
+  },
+  {
+    "business": "Veteran's Barber Shop",
+    "slug": "veterans-barber",
+    "tier": "fullsize",
+    "price": "$550/mo",
+    "en": "veterans-barber/veterans-barber-fullsize-en.html",
+    "es": "veterans-barber/veterans-barber-fullsize-es.html",
+    "qr_url": "../qr-codes/veterans-barber-fullsize.png"
+  },
+  {
+    "business": "Veteran's Barber Shop",
+    "slug": "veterans-barber",
+    "tier": "premium",
+    "price": "$1,000/mo",
+    "en": "veterans-barber/veterans-barber-premium-en.html",
+    "es": "veterans-barber/veterans-barber-premium-es.html",
+    "qr_url": "../qr-codes/veterans-barber-premium.png"
+  },
+  {
+    "business": "Henry's Puffy Tacos",
+    "slug": "henrys-tacos",
+    "tier": "economy",
+    "price": "$150/mo",
+    "en": "henrys-tacos/henrys-tacos-economy-en.html",
+    "es": "henrys-tacos/henrys-tacos-economy-es.html",
+    "qr_url": "../qr-codes/henrys-tacos-economy.png"
+  },
+  {
+    "business": "Henry's Puffy Tacos",
+    "slug": "henrys-tacos",
+    "tier": "fullsize",
+    "price": "$550/mo",
+    "en": "henrys-tacos/henrys-tacos-fullsize-en.html",
+    "es": "henrys-tacos/henrys-tacos-fullsize-es.html",
+    "qr_url": "../qr-codes/henrys-tacos-fullsize.png"
+  },
+  {
+    "business": "Henry's Puffy Tacos",
+    "slug": "henrys-tacos",
+    "tier": "premium",
+    "price": "$1,000/mo",
+    "en": "henrys-tacos/henrys-tacos-premium-en.html",
+    "es": "henrys-tacos/henrys-tacos-premium-es.html",
+    "qr_url": "../qr-codes/henrys-tacos-premium.png"
+  }
+]

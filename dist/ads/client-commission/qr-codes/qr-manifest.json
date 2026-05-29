@@ -1,0 +1,272 @@
+{
+  "campaign": "client-commission-2026",
+  "base_url": "https://targeted-design.com/r",
+  "generated_at": "2026-05-29T12:15:07.492198+00:00",
+  "total_qr_codes": 24,
+  "qr_codes": [
+    {
+      "business_name": "Dutson Pest Control",
+      "business_slug": "dutson-pest",
+      "service": "Pest Control",
+      "zip": "78228",
+      "tier": "economy",
+      "tier_label": "Economy",
+      "tracking_url": "https://targeted-design.com/r/dutson-pest?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=dutson-pest&utm_term=economy",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/dutson-pest-economy.png",
+      "qr_filename": "dutson-pest-economy.png"
+    },
+    {
+      "business_name": "Dutson Pest Control",
+      "business_slug": "dutson-pest",
+      "service": "Pest Control",
+      "zip": "78228",
+      "tier": "fullsize",
+      "tier_label": "Full-Size",
+      "tracking_url": "https://targeted-design.com/r/dutson-pest?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=dutson-pest&utm_term=fullsize",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/dutson-pest-fullsize.png",
+      "qr_filename": "dutson-pest-fullsize.png"
+    },
+    {
+      "business_name": "Dutson Pest Control",
+      "business_slug": "dutson-pest",
+      "service": "Pest Control",
+      "zip": "78228",
+      "tier": "premium",
+      "tier_label": "Premium",
+      "tracking_url": "https://targeted-design.com/r/dutson-pest?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=dutson-pest&utm_term=premium",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/dutson-pest-premium.png",
+      "qr_filename": "dutson-pest-premium.png"
+    },
+    {
+      "business_name": "Carousel Childcare Center",
+      "business_slug": "carousel-childcare",
+      "service": "Childcare",
+      "zip": "78228",
+      "tier": "economy",
+      "tier_label": "Economy",
+      "tracking_url": "https://targeted-design.com/r/carousel-childcare?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=carousel-childcare&utm_term=economy",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/carousel-childcare-economy.png",
+      "qr_filename": "carousel-childcare-economy.png"
+    },
+    {
+      "business_name": "Carousel Childcare Center",
+      "business_slug": "carousel-childcare",
+      "service": "Childcare",
+      "zip": "78228",
+      "tier": "fullsize",
+      "tier_label": "Full-Size",
+      "tracking_url": "https://targeted-design.com/r/carousel-childcare?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=carousel-childcare&utm_term=fullsize",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/carousel-childcare-fullsize.png",
+      "qr_filename": "carousel-childcare-fullsize.png"
+    },
+    {
+      "business_name": "Carousel Childcare Center",
+      "business_slug": "carousel-childcare",
+      "service": "Childcare",
+      "zip": "78228",
+      "tier": "premium",
+      "tier_label": "Premium",
+      "tracking_url": "https://targeted-design.com/r/carousel-childcare?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=carousel-childcare&utm_term=premium",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/carousel-childcare-premium.png",
+      "qr_filename": "carousel-childcare-premium.png"
+    },
+    {
+      "business_name": "Gabe's Priority AC",
+      "business_slug": "gabes-ac",
+      "service": "AC Repair",
+      "zip": "78237",
+      "tier": "economy",
+      "tier_label": "Economy",
+      "tracking_url": "https://targeted-design.com/r/gabes-ac?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=gabes-ac&utm_term=economy",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/gabes-ac-economy.png",
+      "qr_filename": "gabes-ac-economy.png"
+    },
+    {
+      "business_name": "Gabe's Priority AC",
+      "business_slug": "gabes-ac",
+      "service": "AC Repair",
+      "zip": "78237",
+      "tier": "fullsize",
+      "tier_label": "Full-Size",
+      "tracking_url": "https://targeted-design.com/r/gabes-ac?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=gabes-ac&utm_term=fullsize",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/gabes-ac-fullsize.png",
+      "qr_filename": "gabes-ac-fullsize.png"
+    },
+    {
+      "business_name": "Gabe's Priority AC",
+      "business_slug": "gabes-ac",
+      "service": "AC Repair",
+      "zip": "78237",
+      "tier": "premium",
+      "tier_label": "Premium",
+      "tracking_url": "https://targeted-design.com/r/gabes-ac?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=gabes-ac&utm_term=premium",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/gabes-ac-premium.png",
+      "qr_filename": "gabes-ac-premium.png"
+    },
+    {
+      "business_name": "The Grass Company",
+      "business_slug": "grass-company",
+      "service": "Landscaping",
+      "zip": "78237",
+      "tier": "economy",
+      "tier_label": "Economy",
+      "tracking_url": "https://targeted-design.com/r/grass-company?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=grass-company&utm_term=economy",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/grass-company-economy.png",
+      "qr_filename": "grass-company-economy.png"
+    },
+    {
+      "business_name": "The Grass Company",
+      "business_slug": "grass-company",
+      "service": "Landscaping",
+      "zip": "78237",
+      "tier": "fullsize",
+      "tier_label": "Full-Size",
+      "tracking_url": "https://targeted-design.com/r/grass-company?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=grass-company&utm_term=fullsize",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/grass-company-fullsize.png",
+      "qr_filename": "grass-company-fullsize.png"
+    },
+    {
+      "business_name": "The Grass Company",
+      "business_slug": "grass-company",
+      "service": "Landscaping",
+      "zip": "78237",
+      "tier": "premium",
+      "tier_label": "Premium",
+      "tracking_url": "https://targeted-design.com/r/grass-company?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=grass-company&utm_term=premium",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/grass-company-premium.png",
+      "qr_filename": "grass-company-premium.png"
+    },
+    {
+      "business_name": "Buffalo Plumbing Co.",
+      "business_slug": "buffalo-plumbing",
+      "service": "Plumbing",
+      "zip": "78207",
+      "tier": "economy",
+      "tier_label": "Economy",
+      "tracking_url": "https://targeted-design.com/r/buffalo-plumbing?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=buffalo-plumbing&utm_term=economy",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/buffalo-plumbing-economy.png",
+      "qr_filename": "buffalo-plumbing-economy.png"
+    },
+    {
+      "business_name": "Buffalo Plumbing Co.",
+      "business_slug": "buffalo-plumbing",
+      "service": "Plumbing",
+      "zip": "78207",
+      "tier": "fullsize",
+      "tier_label": "Full-Size",
+      "tracking_url": "https://targeted-design.com/r/buffalo-plumbing?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=buffalo-plumbing&utm_term=fullsize",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/buffalo-plumbing-fullsize.png",
+      "qr_filename": "buffalo-plumbing-fullsize.png"
+    },
+    {
+      "business_name": "Buffalo Plumbing Co.",
+      "business_slug": "buffalo-plumbing",
+      "service": "Plumbing",
+      "zip": "78207",
+      "tier": "premium",
+      "tier_label": "Premium",
+      "tracking_url": "https://targeted-design.com/r/buffalo-plumbing?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=buffalo-plumbing&utm_term=premium",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/buffalo-plumbing-premium.png",
+      "qr_filename": "buffalo-plumbing-premium.png"
+    },
+    {
+      "business_name": "Sam's Auto Repair",
+      "business_slug": "sams-auto",
+      "service": "Auto Repair",
+      "zip": "78211",
+      "tier": "economy",
+      "tier_label": "Economy",
+      "tracking_url": "https://targeted-design.com/r/sams-auto?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=sams-auto&utm_term=economy",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/sams-auto-economy.png",
+      "qr_filename": "sams-auto-economy.png"
+    },
+    {
+      "business_name": "Sam's Auto Repair",
+      "business_slug": "sams-auto",
+      "service": "Auto Repair",
+      "zip": "78211",
+      "tier": "fullsize",
+      "tier_label": "Full-Size",
+      "tracking_url": "https://targeted-design.com/r/sams-auto?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=sams-auto&utm_term=fullsize",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/sams-auto-fullsize.png",
+      "qr_filename": "sams-auto-fullsize.png"
+    },
+    {
+      "business_name": "Sam's Auto Repair",
+      "business_slug": "sams-auto",
+      "service": "Auto Repair",
+      "zip": "78211",
+      "tier": "premium",
+      "tier_label": "Premium",
+      "tracking_url": "https://targeted-design.com/r/sams-auto?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=sams-auto&utm_term=premium",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/sams-auto-premium.png",
+      "qr_filename": "sams-auto-premium.png"
+    },
+    {
+      "business_name": "Veteran's Barber Shop",
+      "business_slug": "veterans-barber",
+      "service": "Barbershop",
+      "zip": "78228",
+      "tier": "economy",
+      "tier_label": "Economy",
+      "tracking_url": "https://targeted-design.com/r/veterans-barber?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=veterans-barber&utm_term=economy",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/veterans-barber-economy.png",
+      "qr_filename": "veterans-barber-economy.png"
+    },
+    {
+      "business_name": "Veteran's Barber Shop",
+      "business_slug": "veterans-barber",
+      "service": "Barbershop",
+      "zip": "78228",
+      "tier": "fullsize",
+      "tier_label": "Full-Size",
+      "tracking_url": "https://targeted-design.com/r/veterans-barber?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=veterans-barber&utm_term=fullsize",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/veterans-barber-fullsize.png",
+      "qr_filename": "veterans-barber-fullsize.png"
+    },
+    {
+      "business_name": "Veteran's Barber Shop",
+      "business_slug": "veterans-barber",
+      "service": "Barbershop",
+      "zip": "78228",
+      "tier": "premium",
+      "tier_label": "Premium",
+      "tracking_url": "https://targeted-design.com/r/veterans-barber?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=veterans-barber&utm_term=premium",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/veterans-barber-premium.png",
+      "qr_filename": "veterans-barber-premium.png"
+    },
+    {
+      "business_name": "Henry's Puffy Tacos",
+      "business_slug": "henrys-tacos",
+      "service": "Restaurant",
+      "zip": "78228",
+      "tier": "economy",
+      "tier_label": "Economy",
+      "tracking_url": "https://targeted-design.com/r/henrys-tacos?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=henrys-tacos&utm_term=economy",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/henrys-tacos-economy.png",
+      "qr_filename": "henrys-tacos-economy.png"
+    },
+    {
+      "business_name": "Henry's Puffy Tacos",
+      "business_slug": "henrys-tacos",
+      "service": "Restaurant",
+      "zip": "78228",
+      "tier": "fullsize",
+      "tier_label": "Full-Size",
+      "tracking_url": "https://targeted-design.com/r/henrys-tacos?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=henrys-tacos&utm_term=fullsize",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/henrys-tacos-fullsize.png",
+      "qr_filename": "henrys-tacos-fullsize.png"
+    },
+    {
+      "business_name": "Henry's Puffy Tacos",
+      "business_slug": "henrys-tacos",
+      "service": "Restaurant",
+      "zip": "78228",
+      "tier": "premium",
+      "tier_label": "Premium",
+      "tracking_url": "https://targeted-design.com/r/henrys-tacos?utm_source=eddm&utm_medium=direct_mail&utm_campaign=client-commission-2026&utm_content=henrys-tacos&utm_term=premium",
+      "qr_file": "/home/nemesis/targeted-design-site/ads/client-commission/qr-codes/henrys-tacos-premium.png",
+      "qr_filename": "henrys-tacos-premium.png"
+    }
+  ]
+}

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDDM Card Mockup</title>
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --accent: #fe1616;
+  --white: #fff;
+  --black: #000;
+  --dark-gray: #333132;
+  --card-w: 9in;
+  --card-h: 12in;
+  --safe-w: 9in;
+  --safe-h: 9in;
+}
+
+/* ========== PRINT-READY ========== */
+@media print {
+  @page { size: 9in 12in; margin: 0; }
+  body { margin: 0; padding: 0; }
+  .card-container { box-shadow: none !important; margin: 0 !important; }
+  .no-print { display: none !important; }
+}
+
+/* ========== SCREEN LAYOUT ========== */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body { background: #111; }
+}
+
+/* ========== CONTROLS (no-print) ========== */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.controls label {
+  color: #ccc;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.controls input, .controls select {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: #222;
+  color: #eee;
+  font-size: 0.85rem;
+}
+.controls input[type="color"] {
+  width: 2rem; height: 1.6rem;
+  padding: 0; border: none; cursor: pointer;
+}
+.controls button {
+  padding: 0.4rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.controls button:hover { opacity: 0.85; }
+
+/* ========== CARD SHELL ========== */
+.card-container {
+  width: var(--card-w);
+  height: var(--card-h);
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  flex-shrink: 0;
+}
+
+/* 9×9 safe area indicator (screen only) */
+.card-container::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: var(--safe-w);
+  height: var(--safe-h);
+  border: 1px dashed rgba(0,0,0,0.1);
+  pointer-events: none;
+  z-index: 50;
+}
+
+@media print {
+  .card-container::after { display: none; }
+}
+
+/* ========== FRONT FACE — TOP ACCENT BAR ========== */
+.accent-bar {
+  width: 100%;
+  height: 1.6in;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.accent-bar .biz-name {
+  color: var(--white);
+  font-size: 42pt;
+  font-weight: 800;
+  letter-spacing: 2pt;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.1;
+  padding: 0 0.3in;
+  word-break: break-word;
+}
+
+/* ========== INDUSTRY ICON (CSS-only) ========== */
+.industry-icon-area {
+  height: 3.2in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.industry-icon-area .icon-bg {
+  width: 2.4in;
+  height: 2.4in;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.industry-icon-area .icon-bg svg {
+  width: 1.4in;
+  height: 1.4in;
+  fill: var(--white);
+}
+
+/* ========== TAGLINE ========== */
+.tagline-section {
+  text-align: center;
+  padding: 0.3in 0.5in;
+}
+.tagline-primary {
+  font-size: 22pt;
+  font-weight: 700;
+  color: var(--dark-gray);
+  margin-bottom: 0.08in;
+}
+.tagline-es {
+  font-size: 14pt;
+  font-weight: 400;
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* ========== CTA + PHONE ========== */
+.cta-section {
+  text-align: center;
+  padding: 0.2in 0.5in 0.5in;
+}
+.phone-number {
+  font-size: 32pt;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 1pt;
+}
+.cta-text {
+  font-size: 12pt;
+  color: var(--dark-gray);
+  margin-top: 0.08in;
+  text-transform: uppercase;
+  letter-spacing: 3pt;
+  font-weight: 600;
+}
+.qr-placeholder {
+  width: 1in;
+  height: 1in;
+  margin: 0.3in auto 0;
+  border: 2px dashed var(--dark-gray);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8pt;
+  color: var(--dark-gray);
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  position: relative;
+}
+.qr-placeholder::before {
+  content: '';
+  display: block;
+  width: 0.6in;
+  height: 0.6in;
+  background:
+    repeating-conic-gradient(var(--dark-gray) 0% 25%, transparent 0% 50%) 0 0 / 6px 6px;
+}
+
+/* ========== FOOTER STRIP ========== */
+.footer-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5in;
+  background: var(--dark-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-strip span {
+  font-size: 8pt;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 2pt;
+  text-transform: uppercase;
+}
+
+/* ========== INDUSTRY SVG ICONS (inline, CSS-only delivery) ========== */
+/* Icons are injected via JS based on industry param */
+</style>
+</head>
+<body>
+
+<!-- LIVE CONTROLS -->
+<div class="controls no-print">
+  <label>Business <input id="ctrlBiz" type="text" placeholder="Business Name"></label>
+  <label>Phone <input id="ctrlPhone" type="text" placeholder="210-555-1234"></label>
+  <label>Industry
+    <select id="ctrlIndustry">
+      <option value="restaurant">Restaurant</option>
+      <option value="auto">Auto Repair</option>
+      <option value="hvac">HVAC</option>
+      <option value="plumbing">Plumbing</option>
+      <option value="barber">Hair / Barber</option>
+      <option value="childcare">Childcare</option>
+      <option value="landscaping">Landscaping</option>
+      <option value="pest">Pest Control</option>
+    </select>
+  </label>
+  <label>Color <input id="ctrlColor" type="color" value="#fe1616"></label>
+  <button onclick="applyControls()">Apply</button>
+  <button onclick="window.print()">Print</button>
+</div>
+
+<!-- CARD -->
+<div class="card-container" id="card">
+  <div class="accent-bar">
+    <div class="biz-name" id="bizName">YOUR BUSINESS</div>
+  </div>
+
+  <div class="industry-icon-area">
+    <div class="icon-bg">
+      <svg id="industryIcon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- injected -->
+      </svg>
+    </div>
+  </div>
+
+  <div class="tagline-section">
+    <div class="tagline-primary" id="tagPrimary">Exceptional Service</div>
+    <div class="tagline-es" id="tagEs">Tu mejor opción en el barrio</div>
+  </div>
+
+  <div class="cta-section">
+    <div class="phone-number" id="phoneNum">210-555-1234</div>
+    <div class="cta-text">Call Today — ¡Llama Hoy!</div>
+    <div class="qr-placeholder"><span style="display:none">QR</span></div>
+  </div>
+
+  <div class="footer-strip">
+    <span>Every Door Direct Mail&trade; — Targeted Design Agency</span>
+  </div>
+</div>
+
+<script>
+/* ========== PARAM PARSER ========== */
+const params = new URLSearchParams(window.location.search);
+
+function pv(key, fallback) {
+  return params.get(key) || fallback;
+}
+
+/* ========== INDUSTRY DATA ========== */
+const industries = {
+  restaurant: {
+    tagPrimary: "Exceptional Flavor, Every Time",
+    tagEs: "Tu mejor sabor en el barrio",
+    icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30 10v80M30 10c0 10-12 18-12 28 0 10 12 16 12 22M70 10v50c0 8-6 14-14 14h-4v16M70 10c0 0-4 8-4 18s4 18 4 18" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+  },
+  auto: {
+    tagPrimary: "Your Trusted Repair Shop",
+    tagEs: "Tu taller de confianza",
+    icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 15v70M25 30h50M25 70h50M20 50h60" fill="none" stroke="white" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="50" r="8" fill="none" stroke="white" stroke-width="4"/><path d="M38 20l-8-8M62 20l8-8M38 80l-8 8M62 80l8 8" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/></svg>`
+  },
+  hvac: {
+    tagPrimary: "Comfort Around the Clock",
+    tagEs: "Aire 24/7 — cuando más lo necesitas",
+    icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="22" fill="none" stroke="white" stroke-width="5"/><path d="M50 15v13M50 72v13M15 50h13M72 50h13" stroke="white" stroke-width="5" stroke-linecap="round"/><path d="M26 26l9 9M65 65l9 9M74 26l-9 9M35 65l-9 9" stroke="white" stroke-width="4" stroke-linecap="round"/><circle cx="50" cy="50" r="6" fill="white"/></svg>`
+  },
+  plumbing: {
+    tagPrimary: "Fast, Reliable Plumbing",
+    tagEs: "Emergencias las 24 horas",
+    icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M20 40h25v-15h15v20h20v-10h10" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="82" cy="35" r="6" fill="none" stroke="white" stroke-width="4"/><path d="M20 60h60v5c0 8-8 15-20 15H30c-6 0-10-5-10-10v-10z" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+  },
+  barber: {
+    tagPrimary: "Your Style, Your Community",
+    tagEs: "Tu estilo, tu barrio",
+    icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M35 80L50 15l15 65M39 55h22M42 40h16M45 25h10" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="12" r="4" fill="white"/></svg>`
+  },
+  childcare: {
+    tagPrimary: "Where Little Ones Thrive",
+    tagEs: "Donde tus pequeños están seguros",
+    icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 85C25 65 10 50 10 35c0-12 10-20 20-20 8 0 15 5 20 12 5-7 12-12 20-12 10 0 20 8 20 20 0 15-15 30-40 50z" fill="white"/></svg>`
+  },
+  landscaping: {
+    tagPrimary: "Your Garden, Expertly Kept",
+    tagEs: "Tu jardín en las mejores manos",
+    icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 85V45" stroke="white" stroke-width="4" stroke-linecap="round"/><path d="M50 45c-15-5-30-20-30-30h60c0 10-15 25-30 30z" fill="white"/><path d="M35 55c-8-3-18-12-18-18h18c0 6 0 12 0 18z" fill="white" opacity="0.8"/><path d="M65 55c8-3 18-12 18-18H65c0 6 0 12 0 18z" fill="white" opacity="0.8"/></svg>`
+  },
+  pest: {
+    tagPrimary: "Your Home, Protected",
+    tagEs: "Tu hogar protegido",
+    icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 12L15 50l10 38h50l10-38z" fill="none" stroke="white" stroke-width="5" stroke-linejoin="round"/><path d="M38 52l8 8 16-16" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+  }
+};
+
+/* ========== RENDER ENGINE ========== */
+function renderCard(biz, phone, industry, color) {
+  /* Sanitize inputs */
+  const safeBiz = escapeHTML(biz);
+  const safePhone = escapeHTML(phone);
+
+  /* Set accent color */
+  document.documentElement.style.setProperty('--accent', color);
+
+  /* Business name */
+  document.getElementById('bizName').textContent = safeBiz;
+
+  /* Phone */
+  document.getElementById('phoneNum').textContent = safePhone;
+
+  /* Industry data */
+  const data = industries[industry] || industries.restaurant;
+  document.getElementById('tagPrimary').textContent = data.tagPrimary;
+  document.getElementById('tagEs').textContent = data.tagEs;
+
+  /* Icon */
+  const iconContainer = document.getElementById('industryIcon');
+  iconContainer.outerHTML = data.icon;
+}
+
+function escapeHTML(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ========== CONTROLS ========== */
+function applyControls() {
+  const biz = document.getElementById('ctrlBiz').value || 'Your Business';
+  const phone = document.getElementById('ctrlPhone').value || '210-555-1234';
+  const industry = document.getElementById('ctrlIndustry').value;
+  const color = document.getElementById('ctrlColor').value;
+
+  /* Update URL for shareability */
+  const url = new URL(window.location);
+  url.searchParams.set('biz', biz);
+  url.searchParams.set('phone', phone);
+  url.searchParams.set('industry', industry);
+  url.searchParams.set('color', color);
+  window.history.replaceState({}, '', url);
+
+  renderCard(biz, phone, industry, color);
+}
+
+/* ========== INIT ========== */
+(function init() {
+  const biz = pv('biz', 'Your Business');
+  const phone = pv('phone', '210-555-1234');
+  const industry = pv('industry', 'restaurant');
+  const color = pv('color', '#fe1616');
+
+  /* Populate controls */
+  document.getElementById('ctrlBiz').value = decodeURIComponent(biz);
+  document.getElementById('ctrlPhone').value = decodeURIComponent(phone);
+  document.getElementById('ctrlIndustry').value = industry;
+  document.getElementById('ctrlColor').value = color;
+
+  renderCard(biz, phone, industry, color);
+})();
+</script>
+</body>
+</html>
