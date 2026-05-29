@@ -14,8 +14,8 @@ git commit -m "$MSG" 2>/dev/null
 # Push to git (version control)
 git push origin main 2>/dev/null
 
-# Deploy ONLY the dist/ directory to Cloudflare Pages
-npx wrangler pages deploy dist --project-name targeted-design --commit-dirty=true
+# Deploy to Cloudflare Pages
+npx wrangler pages deploy . --project-name targeted-design --commit-dirty=true
 
 echo ""
 echo "✓ Deployed. Verify at https://targeted-design.com"
