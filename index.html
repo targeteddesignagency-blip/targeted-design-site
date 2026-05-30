@@ -84,9 +84,12 @@
         .team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
         .team-card{background:var(--dark);border-radius:12px;padding:28px 16px;text-align:center;border:1px solid rgba(255,255,255,.05);transition:border-color .3s}
         .team-card:hover{border-color:rgba(254,22,22,.25)}
-        .team-icon{width:48px;height:48px;margin:0 auto 16px;background:rgba(254,22,22,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.25rem}
-        .team-card h4{font-size:.95rem;font-weight:700;margin-bottom:4px}
-        .team-card p{font-size:.8rem;color:var(--gray)}
+        .team-card{overflow:hidden}
+        .team-photo{width:100%;aspect-ratio:1;object-fit:cover;filter:grayscale(.3);transition:filter .3s}
+        .team-card:hover .team-photo{filter:grayscale(0)}
+        .team-info{padding:16px;text-align:left}
+        .team-card h4{font-size:.95rem;font-weight:700;margin-bottom:2px}
+        .team-card p{font-size:.8rem;color:var(--gray);line-height:1.4}
 
         /* --- CTA SECTION --- */
         .cta-section{text-align:center;background:linear-gradient(135deg,var(--dark) 0%,rgba(254,22,22,.08) 100%);border-radius:24px;padding:80px 40px;margin:0 auto;max-width:1000px}
@@ -243,31 +246,70 @@
         <div class="section-label" data-i18n="team.label">The Team</div>
         <div class="section-title" data-i18n="team.title">Built different. Built to deliver.</div>
         <p class="section-sub" style="margin-left:auto;margin-right:auto" data-i18n="team.sub">AI-driven operations. Human-backed results.</p>
-        <div class="team-grid" style="max-width:800px;margin:0 auto">
+        <div class="team-grid" style="max-width:1000px;margin:0 auto;grid-template-columns:repeat(auto-fill,minmax(180px,1fr))">
             <div class="team-card">
-                <div class="team-icon">🎯</div>
-                <h4 data-i18n="team.exec.name">Executive</h4>
-                <p data-i18n="team.exec.desc">Strategy &amp; growth</p>
+                <img src="team/alex-sterling.jpg" alt="Alex Sterling" class="team-photo">
+                <div class="team-info">
+                    <h4>Alex Sterling</h4>
+                    <div class="role" style="color:var(--red);font-size:.75rem;font-weight:600;margin-bottom:4px">CEO</div>
+                    <p style="font-size:.8rem;color:var(--gray)">Warm but sharp. Coordinates seven agents, owns the strategy.</p>
+                </div>
             </div>
             <div class="team-card">
-                <div class="team-icon">🎨</div>
-                <h4 data-i18n="team.design.name">Design</h4>
-                <p data-i18n="team.design.desc">Creative &amp; production</p>
+                <img src="team/nova-chen.jpg" alt="Nova Chen" class="team-photo">
+                <div class="team-info">
+                    <h4>Nova Chen</h4>
+                    <div class="role" style="color:var(--red);font-size:.75rem;font-weight:600;margin-bottom:4px" data-i18n="team.ops.name">Operations</div>
+                    <p style="font-size:.8rem;color:var(--gray)" data-i18n="team.ops.desc">Systems &amp; automation</p>
+                </div>
             </div>
             <div class="team-card">
-                <div class="team-icon">📊</div>
-                <h4 data-i18n="team.research.name">Research</h4>
-                <p data-i18n="team.research.desc">Market intel &amp; sales</p>
+                <img src="team/river-mitchell.jpg" alt="River Mitchell" class="team-photo">
+                <div class="team-info">
+                    <h4>River Mitchell</h4>
+                    <div class="role" style="color:var(--red);font-size:.75rem;font-weight:600;margin-bottom:4px">CMO</div>
+                    <p style="font-size:.8rem;color:var(--gray)">Sales &amp; copy. Moves fast, closes faster.</p>
+                </div>
             </div>
             <div class="team-card">
-                <div class="team-icon">✅</div>
-                <h4 data-i18n="team.compliance.name">Compliance</h4>
-                <p data-i18n="team.compliance.desc">USPS &amp; regulatory</p>
+                <img src="team/echo-hayes.jpg" alt="Echo Hayes" class="team-photo">
+                <div class="team-info">
+                    <h4>Echo Hayes</h4>
+                    <div class="role" style="color:var(--red);font-size:.75rem;font-weight:600;margin-bottom:4px">CFO</div>
+                    <p style="font-size:.8rem;color:var(--gray)">Numbers don't lie. She makes sure they add up.</p>
+                </div>
             </div>
             <div class="team-card">
-                <div class="team-icon">⚙️</div>
-                <h4 data-i18n="team.ops.name">Operations</h4>
-                <p data-i18n="team.ops.desc">Systems &amp; automation</p>
+                <img src="team/iris-nakamura.jpg" alt="Iris Nakamura" class="team-photo">
+                <div class="team-info">
+                    <h4>Iris Nakamura</h4>
+                    <div class="role" style="color:var(--red);font-size:.75rem;font-weight:600;margin-bottom:4px" data-i18n="team.design.name">Design</div>
+                    <p style="font-size:.8rem;color:var(--gray)" data-i18n="team.design.desc">Creative &amp; production</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="team/sage-mitchell.jpg" alt="Sage Mitchell" class="team-photo">
+                <div class="team-info">
+                    <h4>Sage Mitchell</h4>
+                    <div class="role" style="color:var(--red);font-size:.75rem;font-weight:600;margin-bottom:4px" data-i18n="team.research.name">Research</div>
+                    <p style="font-size:.8rem;color:var(--gray)" data-i18n="team.research.desc">Market intel &amp; sales</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="team/quinn-washington.jpg" alt="Quinn Washington" class="team-photo">
+                <div class="team-info">
+                    <h4>Quinn Washington</h4>
+                    <div class="role" style="color:var(--red);font-size:.75rem;font-weight:600;margin-bottom:4px" data-i18n="team.compliance.name">Compliance</div>
+                    <p style="font-size:.8rem;color:var(--gray)" data-i18n="team.compliance.desc">USPS &amp; regulatory</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="team/jordan-reed.jpg" alt="Jordan Reed" class="team-photo">
+                <div class="team-info">
+                    <h4>Jordan Reed</h4>
+                    <div class="role" style="color:var(--red);font-size:.75rem;font-weight:600;margin-bottom:4px">CTO</div>
+                    <p style="font-size:.8rem;color:var(--gray)">Builds the systems that run the agency.</p>
+                </div>
             </div>
         </div>
     </div>
