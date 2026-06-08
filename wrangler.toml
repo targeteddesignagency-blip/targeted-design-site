@@ -1,0 +1,5 @@
+name = "targeted-design"
+pages_build_output_dir = "."
+
+[env.production]
+name = "targeted-design"
