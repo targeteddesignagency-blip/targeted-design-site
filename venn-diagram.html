@@ -20,11 +20,11 @@
     .logo{font-size:1.25rem;font-weight:800;letter-spacing:-.5px;color:var(--white)}
     .logo span{color:var(--red)}
     .nav-links{display:flex;gap:28px;align-items:center}
-    .nav-links a{font-size:.875rem;font-weight:500;color:var(--light-gray);transition:color .2s}
-    .nav-links a:hover{color:var(--red)}
+    .nav-links a{font-size:.875rem;font-weight:500;color:var(--light-gray);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--red);text-decoration:underline}
     .nav-links a.active{color:var(--red)}
     .nav-cta{background:var(--red);color:var(--white)!important;padding:8px 20px;border-radius:6px;font-weight:600;font-size:.875rem;transition:transform .15s,box-shadow .2s}
-    .nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(254,22,22,.4)}
+    .nav-cta{text-decoration:none}.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(254,22,22,.4)}
 
     /* HERO */
     .hero{padding:140px 24px 60px;text-align:center}
@@ -81,7 +81,7 @@
 
     footer{border-top:1px solid rgba(255,255,255,.06);padding:40px 24px;text-align:center}
     footer p{color:var(--gray);font-size:.85rem;margin-bottom:8px}
-    footer a{color:var(--red);transition:color .2s}
+    footer a{color:var(--red);text-decoration:underline;text-decoration-color:rgba(254,22,22,.4);transition:color .2s}
     footer a:hover{color:var(--white)}
 
     @media(max-width:600px){
