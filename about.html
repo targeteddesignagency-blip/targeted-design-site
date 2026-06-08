@@ -105,12 +105,12 @@
         .delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}.delay-4{animation-delay:.4s}
     
         /* --- TEAM V2 LAYOUT --- */
-        .team-layout{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:24px;max-width:1080px;margin-left:auto;margin-right:auto}
+        .team-layout{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:24px;max-width:1200px;margin-left:auto;margin-right:auto}
         .team-top{margin-bottom:16px;display:flex;justify-content:center}
-        .team-top .team-card{width:250px;flex-shrink:0}
+        .team-card{width:220px;flex-shrink:0}
+        .team-bottom{display:flex;justify-content:center;gap:24px;margin-top:0;flex-wrap:wrap}
         .team-divider{margin:32px 0;display:flex;align-items:center;justify-content:center}
         .team-logo-img{width:80px;height:80px;object-fit:contain;opacity:.8}
-        .team-bottom{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:0;width:100%}
         @media(max-width:768px){
             .team-bottom{flex-direction:column;gap:24px;align-items:center}
             .team-col{max-width:100%;align-items:center}
@@ -199,7 +199,7 @@
         <div class="team-layout">
             <!-- Top: Levi -->
             <div class="team-top fade-up">
-                <div class="team-card team-card-elevated">
+                <div class="team-card">
                     <img src="team/levi.jpg" alt="Levi" class="team-photo">
                     <div class="team-info">
                         <h4>Levi</h4>
@@ -214,45 +214,38 @@
                 <img src="logo.png" alt="Targeted Design Agency" class="team-logo-img">
             </div>
 
-            <!-- Bottom: Two columns -->
+            <!-- Bottom: All 4 agents in flat grid -->
             <div class="team-bottom">
-                <!-- Left: OWL + Alex -->
-                <div class="team-col team-col-left">
-                    <div class="team-card fade-up delay-2">
-                        <img src="team/owl.jpg" alt="OWL" class="team-photo">
-                        <div class="team-info">
-                            <h4>OWL</h4>
-                            <div class="role">CMO</div>
-                            <div class="desc">Content production at scale. Social media, email, copy — the voice of the brand.</div>
-                        </div>
-                    </div>
-                    <div class="team-card fade-up delay-3">
-                        <img src="team/alex-sterling.jpg" alt="Alex Sterling" class="team-photo">
-                        <div class="team-info">
-                            <h4>Alex Sterling</h4>
-                            <div class="role">CEO</div>
-                            <div class="desc">Strategy and coordination. Warm but sharp — the connective tissue of the operation.</div>
-                        </div>
+                <div class="team-card fade-up delay-1">
+                    <img src="team/owl.jpg" alt="OWL" class="team-photo">
+                    <div class="team-info">
+                        <h4>OWL</h4>
+                        <div class="role">CMO</div>
+                        <div class="desc">Content production at scale. Social media, email, copy — the voice of the brand.</div>
                     </div>
                 </div>
-
-                <!-- Right: Optimus + Prime -->
-                <div class="team-col team-col-right">
-                    <div class="team-card fade-up delay-2">
-                        <img src="team/hermes.jpg" alt="Hermes" class="team-photo">
-                        <div class="team-info">
-                            <h4>Hermes</h4>
-                            <div class="role">Research Director</div>
-                            <div class="desc">Market intel, lead generation, pipeline. Data-driven prospecting at scale.</div>
-                        </div>
+                <div class="team-card fade-up delay-2">
+                    <img src="team/alex-sterling.jpg" alt="Alex Sterling" class="team-photo">
+                    <div class="team-info">
+                        <h4>Alex Sterling</h4>
+                        <div class="role">CEO</div>
+                        <div class="desc">Strategy and coordination. Warm but sharp — keeps the mission on track.</div>
                     </div>
-                    <div class="team-card fade-up delay-3">
-                        <img src="team/prime.jpg" alt="Prime" class="team-photo">
-                        <div class="team-info">
-                            <h4>Prime</h4>
-                            <div class="role">CTO</div>
-                            <div class="desc">Infrastructure, integrations, automation. Builds what others only plan.</div>
-                        </div>
+                </div>
+                <div class="team-card fade-up delay-3">
+                    <img src="team/hermes.jpg" alt="Hermes" class="team-photo">
+                    <div class="team-info">
+                        <h4>Hermes</h4>
+                        <div class="role">Research Director</div>
+                        <div class="desc">Market intel, lead generation, pipeline. Data-driven prospecting at scale.</div>
+                    </div>
+                </div>
+                <div class="team-card fade-up delay-4">
+                    <img src="team/prime.jpg" alt="Prime" class="team-photo">
+                    <div class="team-info">
+                        <h4>Prime</h4>
+                        <div class="role">CTO</div>
+                        <div class="desc">Infrastructure, integrations, automation. Builds what others only plan.</div>
                     </div>
                 </div>
             </div>
