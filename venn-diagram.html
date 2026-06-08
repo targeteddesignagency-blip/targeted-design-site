@@ -79,7 +79,9 @@
     .cta-section{text-align:center;background:linear-gradient(135deg,var(--dark) 0%,rgba(254,22,22,.08) 100%);border-radius:24px;padding:60px 40px;margin:60px auto;max-width:1000px}
     .cta-section h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:16px}
     .cta-section p{color:var(--light-gray);margin-bottom:24px;font-size:1rem}
-    .btn{display:inline-block;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;transition:all .2s;cursor:pointer}
+    .cta-section a:not(.btn){color:var(--red);text-decoration:underline;text-decoration-color:rgba(254,22,22,.5)}
+    .cta-section a:not(.btn):hover{color:var(--white);text-decoration-color:var(--white)}
+    .btn{display:inline-block;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .2s;cursor:pointer}
     .btn-primary{background:var(--red);color:var(--white);box-shadow:0 4px 24px rgba(254,22,22,.35)}
     .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(254,22,22,.5)}
 
