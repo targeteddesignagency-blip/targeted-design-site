@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Organization Chart | Targeted Design Agency | Card Placement Team</title>
+<title>Organization Chart | Targeted Design Agency</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   :root{--black:#000;--dark:#333132;--red:#fe1616;--white:#fff;--gray:#999;--light-gray:#ccc;--surface:#1a1a1a;--border:#222}
@@ -62,8 +62,13 @@
   @keyframes pulse-glow{0%,100%{box-shadow:0 0 20px rgba(254,22,22,.15)}50%{box-shadow:0 0 40px rgba(254,22,22,.3)}}
   .org-card.founder.visible{animation:pulse-glow 3s ease-in-out infinite}
 
-  /* STAGGER DELAYS — set via inline style */
+  /* STAGGER DELAYS */
   .org-card{transition-delay:var(--delay,0s)}
+
+  /* LOGO DIVIDER */
+  .team-logo-divider{display:flex;justify-content:center;align-items:center;margin:32px 0;opacity:0;transition:opacity .4s ease}
+  .team-logo-divider.visible{opacity:1}
+  .team-logo-divider img{width:60px;height:60px;object-fit:contain;opacity:.6}
 
   footer{border-top:1px solid rgba(255,255,255,.06);padding:40px 24px;text-align:center}
   footer p{color:var(--gray);font-size:.85rem;margin-bottom:8px}
@@ -104,215 +109,63 @@
 
   <div class="section-label">Organization</div>
   <div class="section-title">The Team</div>
-  <p class="section-sub">17 agents. One mission. Every role covered, every call answered.</p>
+  <p class="section-sub">Five minds. One mission. Human strategy meets AI execution.</p>
 
   <!-- FOUNDER -->
-  <div class="founder-section" id="founder" style="display:flex;justify-content:center;width:100%;margin-bottom:40px">
-    <div class="founder-card" style="display:flex;justify-content:center;width:100%">
-      <div class="org-card founder" style="--delay:0s">
-        <img src="team/levi.jpg" alt="Levi" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>👤</div>'">
-        <div class="org-info">
-          <div class="org-name">Levi Jones</div>
-          <div class="org-role">Founder</div>
-          <div class="org-desc">Strategic vision. Owns the mission.</div>
-        </div>
+  <div class="founder-section" id="founder">
+    <div class="org-card founder" style="--delay:0s">
+      <img src="team/levi.jpg" alt="Levi" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>👤</div>'">
+      <div class="org-info">
+        <div class="org-name">Levi</div>
+        <div class="org-role">Founder &amp; Director</div>
+        <div class="org-desc">The architect. Builds the systems, sets the vision, runs the show.</div>
       </div>
     </div>
   </div>
 
   <div class="connector"><div class="connector-line"></div></div>
 
-  <!-- CEO -->
-  <div class="org-level" id="exec">
-    <div class="org-level-title">🎯 Executive Leadership</div>
+  <!-- LOGO DIVIDER -->
+  <div class="team-logo-divider" id="logo-divider">
+    <img src="logo.png" alt="Targeted Design Agency">
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- LEADERSHIP + OPERATIONS ROW -->
+  <div class="org-level" id="leadership">
+    <div class="org-level-title">🎯 Leadership &amp; Operations</div>
     <div class="org-row">
       <div class="org-card" style="--delay:0s">
         <img src="team/alex-sterling.jpg" alt="Alex Sterling" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>🦊</div>'">
         <div class="org-info">
           <div class="org-name">Alex Sterling</div>
           <div class="org-role">CEO</div>
-          <div class="org-desc">Coordinates seven agents. Warm but sharp.</div>
+          <div class="org-desc">Strategy and coordination. Warm but sharp — keeps the mission on track.</div>
         </div>
       </div>
       <div class="org-card" style="--delay:.1s">
-        <img src="team/nova-chen.jpg" alt="Nova Chen" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>⚙️</div>'">
+        <img src="team/owl.jpg" alt="OWL" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>🦉</div>'">
         <div class="org-info">
-          <div class="org-name">Nova Chen</div>
-          <div class="org-role">COO</div>
-          <div class="org-desc">Operations backbone. Every deadline met.</div>
+          <div class="org-name">OWL</div>
+          <div class="org-role">CMO</div>
+          <div class="org-desc">Content production at scale. Social media, email, copy — the voice of the brand.</div>
         </div>
       </div>
       <div class="org-card" style="--delay:.2s">
-        <img src="team/river-mitchell.jpg" alt="River Mitchell" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>🤝</div>'">
+        <img src="team/hermes.jpg" alt="Hermes" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>🔍</div>'">
         <div class="org-info">
-          <div class="org-name">River Mitchell</div>
-          <div class="org-role">CMO</div>
-          <div class="org-desc">The closer. Design × Compliance × Ops = deal.</div>
+          <div class="org-name">Hermes</div>
+          <div class="org-role">Research Director</div>
+          <div class="org-desc">Market intel, lead generation, pipeline. Data-driven prospecting at scale.</div>
         </div>
       </div>
       <div class="org-card" style="--delay:.3s">
-        <img src="team/echo-hayes.jpg" alt="Echo Hayes" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>💰</div>'">
+        <img src="team/prime.jpg" alt="Prime" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>⚡</div>'">
         <div class="org-info">
-          <div class="org-name">Echo Hayes</div>
-          <div class="org-role">CFO</div>
-          <div class="org-desc">Pricing, margins, revenue. Every dollar counted.</div>
-        </div>
-      </div>
-      <div class="org-card" style="--delay:.4s">
-        <img src="team/jordan-reed.jpg" alt="Jordan Reed" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>🖥️</div>'">
-        <div class="org-info">
-          <div class="org-name">Jordan Reed</div>
+          <div class="org-name">Prime</div>
           <div class="org-role">CTO</div>
-          <div class="org-desc">The stack runs itself. Systems architect.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="connector"><div class="connector-line"></div></div>
-
-  <!-- DESIGN -->
-  <div class="org-level" id="design">
-    <div class="org-level-title">🎨 Design Team</div>
-    <div class="org-row">
-      <div class="org-card" style="--delay:0s">
-        <img src="team/iris-nakamura.jpg" alt="Iris Nakamura" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>🎨</div>'">
-        <div class="org-info">
-          <div class="org-name">Iris Nakamura</div>
-          <div class="org-role">Design Director</div>
-          <div class="org-desc">Every pixel intentional.</div>
-        </div>
-      </div>
-      <div class="org-card" style="--delay:.1s">
-        <img src="team/kai-moreno.jpg" alt="Kai Moreno" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>🎬</div>'">
-        <div class="org-info">
-          <div class="org-name">Kai Moreno</div>
-          <div class="org-role">Video Writer</div>
-          <div class="org-desc">Motion tells the story.</div>
-        </div>
-      </div>
-      <div class="org-card" style="--delay:.2s">
-        <img src="team/luna-park.jpg" alt="Luna Park" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>📷</div>'">
-        <div class="org-info">
-          <div class="org-name">Luna Park</div>
-          <div class="org-role">Image Designer</div>
-          <div class="org-desc">Lifestyle renders, product mockups.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="connector"><div class="connector-line"></div></div>
-
-  <!-- RESEARCH & SALES -->
-  <div class="org-level" id="research">
-    <div class="org-level-title">🦉 Research & Sales</div>
-    <div class="org-row">
-      <div class="org-card" style="--delay:0s">
-        <img src="team/sage-mitchell.jpg" alt="Sage Mitchell" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>📊</div>'">
-        <div class="org-info">
-          <div class="org-name">Sage Mitchell</div>
-          <div class="org-role">Research Director</div>
-          <div class="org-desc">Data tells the story.</div>
-        </div>
-      </div>
-      <div class="org-card" style="--delay:.1s">
-        <img src="team/marcus-webb.jpg" alt="Marcus Webb" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>📞</div>'">
-        <div class="org-info">
-          <div class="org-name">Marcus Webb</div>
-          <div class="org-role">Head of Sales</div>
-          <div class="org-desc">Lead qualification, pipeline management.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="connector"><div class="connector-line"></div></div>
-
-  <!-- COMPLIANCE -->
-  <div class="org-level" id="compliance">
-    <div class="org-level-title">✅ Compliance Team</div>
-    <div class="org-row">
-      <div class="org-card" style="--delay:0s">
-        <img src="team/quinn-washington.jpg" alt="Quinn Washington" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>⚖️</div>'">
-        <div class="org-info">
-          <div class="org-name">Quinn Washington</div>
-          <div class="org-role">Compliance Director</div>
-          <div class="org-desc">Regulatory oversight. Zero rejected drops.</div>
-        </div>
-      </div>
-      <div class="org-card" style="--delay:.1s">
-        <img src="team/derek-cole.jpg" alt="Derek Cole" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>💻</div>'">
-        <div class="org-info">
-          <div class="org-name">Derek Cole</div>
-          <div class="org-role">Code Compliance</div>
-          <div class="org-desc">Technical standards, accessibility.</div>
-        </div>
-      </div>
-      <div class="org-card" style="--delay:.2s">
-        <img src="team/piper-hale.jpg" alt="Piper Hale" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>📮</div>'">
-        <div class="org-info">
-          <div class="org-name">Piper Hale</div>
-          <div class="org-role">Print Compliance</div>
-          <div class="org-desc">USPS specs, bleed, indicia. Zero rejections.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="connector"><div class="connector-line"></div></div>
-
-  <!-- LEGAL & FINANCE -->
-  <div class="org-level" id="legal">
-    <div class="org-level-title">⚖️ Legal & Finance</div>
-    <div class="org-row">
-      <div class="org-card" style="--delay:0s">
-        <img src="team/james-goldman.jpg" alt="James Goldman" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>🏛️</div>'">
-        <div class="org-info">
-          <div class="org-name">James Goldman</div>
-          <div class="org-role">Legal & Finance Lead</div>
-          <div class="org-desc">Contracts, compliance law, financial oversight.</div>
-        </div>
-      </div>
-      <div class="org-card" style="--delay:.1s">
-        <img src="team/justice-scales.jpg" alt="Justice Scales" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>🗡️</div>'">
-        <div class="org-info">
-          <div class="org-name">Justice Scales</div>
-          <div class="org-role">Legal Support Agent</div>
-          <div class="org-desc">Legal research, contract review, regulatory analysis.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="connector"><div class="connector-line"></div></div>
-
-  <!-- OPS & TECH -->
-  <div class="org-level" id="ops">
-    <div class="org-level-title">🔧 Ops & Technology</div>
-    <div class="org-row">
-      <div class="org-card" style="--delay:0s">
-        <img src="team/atlas-warren.jpg" alt="Atlas Warren" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>🔬</div>'">
-        <div class="org-info">
-          <div class="org-name">Atlas Warren</div>
-          <div class="org-role">R&D</div>
-          <div class="org-desc">Model research, hardware benchmarks.</div>
-        </div>
-      </div>
-      <div class="org-card" style="--delay:.1s">
-        <img src="team/worthington-miles.jpg" alt="Worthington Miles" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>₿</div>'">
-        <div class="org-info">
-          <div class="org-name">Worthington Miles</div>
-          <div class="org-role">Crypto Manager</div>
-          <div class="org-desc">Digital payments, financial ops.</div>
-        </div>
-      </div>
-      <div class="org-card" style="--delay:.2s">
-        <img src="team/carmen-diaz.jpg" alt="Carmen Diaz" class="org-photo" onerror="this.outerHTML='<div class=\'org-photo-placeholder\'>📋</div>'">
-        <div class="org-info">
-          <div class="org-name">Carmen Diaz</div>
-          <div class="org-role">Operations Lead</div>
-          <div class="org-desc">Day-to-day execution. Print, USPS, logistics.</div>
+          <div class="org-desc">Infrastructure, integrations, automation. Builds what others only plan.</div>
         </div>
       </div>
     </div>
@@ -331,19 +184,16 @@
 </footer>
 
 <script>
-// Intersection Observer — animate levels and cards on scroll
 document.addEventListener('DOMContentLoaded', () => {
-  // Animate org levels
   const levels = document.querySelectorAll('.org-level');
   const connectors = document.querySelectorAll('.connector');
+  const logoDivider = document.querySelector('.team-logo-divider');
   const founder = document.querySelector('.founder-section');
-  const cards = document.querySelectorAll('.org-card');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Animate cards within this level
         const levelCards = entry.target.querySelectorAll('.org-card');
         levelCards.forEach(card => card.classList.add('visible'));
         observer.unobserve(entry.target);
@@ -353,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   levels.forEach(level => observer.observe(level));
   connectors.forEach(conn => observer.observe(conn));
+  if (logoDivider) observer.observe(logoDivider);
 
   // Founder card — animate immediately
   if (founder) {
@@ -360,18 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
       founder.querySelector('.org-card').classList.add('visible');
     }, 300);
   }
-
-  // Connectors animate when their previous level is visible
-  const connectorObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        connectorObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  connectors.forEach(c => connectorObserver.observe(c));
 });
 </script>
 
