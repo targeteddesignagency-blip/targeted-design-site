@@ -15,6 +15,10 @@
     body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
+    /* Global link style — red underlined */
+    a{color:var(--red);text-decoration:underline;text-decoration-color:rgba(254,22,22,.4)}
+    a:hover{color:var(--white);text-decoration-color:var(--white)}
+
     nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(254,22,22,.15);padding:0 24px}
     nav .container{display:flex;justify-content:space-between;align-items:center;height:64px}
     .logo{font-size:1.25rem;font-weight:800;letter-spacing:-.5px;color:var(--white)}
@@ -23,7 +27,7 @@
     .nav-links a{font-size:.875rem;font-weight:500;color:var(--light-gray);text-decoration:none;transition:color .2s}
     .nav-links a:hover{color:var(--red);text-decoration:underline}
     .nav-links a.active{color:var(--red)}
-    .nav-cta{background:var(--red);color:var(--white)!important;padding:8px 20px;border-radius:6px;font-weight:600;font-size:.875rem;transition:transform .15s,box-shadow .2s}
+    .nav-cta{background:var(--red);color:var(--white)!important;padding:8px 20px;border-radius:6px;font-weight:600;font-size:.875rem;text-decoration:none;transition:transform .15s,box-shadow .2s}
     .nav-cta{text-decoration:none}.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(254,22,22,.4)}
 
     /* HERO */
