@@ -1,0 +1,12 @@
+# Hillin's Auto Repair
+- **Industry:** Auto Repair
+- **Address:** 1511 Somerset Rd, San Antonio, TX 78211
+- **ZIP:** 78211
+- **Phone:** (210) 922-2216
+- **Website:** hillinsautorepair.net
+- **Sources:** website, Yelp, Facebook, SureCritic
+- **Verified:** YES
+- **Score:** 5 (Diamond)
+- **Notes:** Since 1982 (43 years!), family-owned and operated, 5.0★ from 410 reviews, full auto repair + maintenance, South San Antonio staple. Strongest 78211 auto repair lead.
+- **Diamond ZIP:** 78211 ✅
+- **Found:** 2026-06-03

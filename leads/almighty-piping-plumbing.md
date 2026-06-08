@@ -1,0 +1,12 @@
+# Almighty Piping & Plumbing Co LLC
+- **Industry:** Plumbing
+- **Address:** 2134 Waverly Ave, San Antonio, TX 78228
+- **ZIP:** 78228
+- **Phone:** (210) 465-1148
+- **Email:** almightyplumbingco@gmail.com
+- **Sources:** Chamber of Commerce, Yelp, Facebook, MapQuest, plumbingcompanysanantoniotx.com
+- **Verified:** YES
+- **Score:** 4 (Strong)
+- **Notes:** 24/7 plumbing service in 78228, UA Local 142 member (union), licensed. Second dedicated 78228 plumbing lead.
+- **Diamond ZIP:** 78228 ✅
+- **Found:** 2026-06-03

@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <!-- Red glow behind face -->
+    <radialGradient id="glow" cx="50%" cy="47%" r="35%">
+      <stop offset="0%" stop-color="#dc2626" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#dc2626" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Face panel gradient -->
+    <linearGradient id="face" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a3a4a"/>
+      <stop offset="30%" stop-color="#2a2a3a"/>
+      <stop offset="70%" stop-color="#1a1a2a"/>
+      <stop offset="100%" stop-color="#0f0f1a"/>
+    </linearGradient>
+    <!-- Eye glow -->
+    <linearGradient id="eyeGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff4444"/>
+      <stop offset="50%" stop-color="#ff6622"/>
+      <stop offset="100%" stop-color="#ff4444"/>
+    </linearGradient>
+    <!-- Eye bloom -->
+    <radialGradient id="eyeBloom" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6633" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff6633" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Silver highlight -->
+    <linearGradient id="silver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c0c0d2" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#c0c0d2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+
+  <!-- Red glow behind face -->
+  <ellipse cx="512" cy="480" rx="300" ry="320" fill="url(#glow)"/>
+
+  <!-- Main face shape - angular geometric polygon -->
+  <polygon points="512,180 680,280 720,450 650,650 512,750 374,650 304,450 344,280" fill="url(#face)" stroke="#dc2626" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Horizontal panel lines -->
+  <g stroke="#dc2626" stroke-width="0.8" stroke-opacity="0.25" fill="none">
+    <line x1="370" y1="260" x2="654" y2="260"/>
+    <line x1="355" y1="320" x2="669" y2="320"/>
+    <line x1="345" y1="380" x2="679" y2="380"/>
+    <line x1="340" y1="440" x2="684" y2="440"/>
+    <line x1="345" y1="500" x2="679" y2="500"/>
+    <line x1="355" y1="560" x2="669" y2="560"/>
+    <line x1="370" y1="620" x2="654" y2="620"/>
+  </g>
+
+  <!-- Circuit board traces - left side -->
+  <g stroke="#dc2626" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="380,300 420,300 420,360 460,360"/>
+    <polyline points="360,400 400,400 400,460 380,460"/>
+    <polyline points="370,500 410,500 410,540"/>
+    <polyline points="390,580 430,580 430,620"/>
+  </g>
+
+  <!-- Circuit board traces - right side -->
+  <g stroke="#dc2626" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="644,300 604,300 604,360 564,360"/>
+    <polyline points="664,400 624,400 624,460 644,460"/>
+    <polyline points="654,500 614,500 614,540"/>
+    <polyline points="634,580 594,580 594,620"/>
+  </g>
+
+  <!-- Circuit nodes -->
+  <g fill="#dc2626" opacity="0.8">
+    <circle cx="420" cy="300" r="3"/>
+    <circle cx="420" cy="360" r="3"/>
+    <circle cx="460" cy="360" r="3"/>
+    <circle cx="400" cy="400" r="3"/>
+    <circle cx="400" cy="460" r="3"/>
+    <circle cx="410" cy="500" r="3"/>
+    <circle cx="410" cy="540" r="3"/>
+    <circle cx="430" cy="580" r="3"/>
+    <circle cx="430" cy="620" r="3"/>
+    <circle cx="604" cy="300" r="3"/>
+    <circle cx="604" cy="360" r="3"/>
+    <circle cx="564" cy="360" r="3"/>
+    <circle cx="624" cy="400" r="3"/>
+    <circle cx="624" cy="460" r="3"/>
+    <circle cx="614" cy="500" r="3"/>
+    <circle cx="614" cy="540" r="3"/>
+    <circle cx="594" cy="580" r="3"/>
+    <circle cx="594" cy="620" r="3"/>
+  </g>
+
+  <!-- Brow line - red accent -->
+  <polyline points="400,340 512,315 624,340" stroke="#dc2626" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Cheek structure lines -->
+  <g stroke="#dc2626" stroke-width="1.5" fill="none" opacity="0.4">
+    <polyline points="380,420 430,460 400,500"/>
+    <polyline points="644,420 594,460 624,500"/>
+  </g>
+
+  <!-- Chin accent -->
+  <polyline points="440,680 512,720 584,680" stroke="#dc2626" stroke-width="1" fill="none" opacity="0.3"/>
+
+  <!-- Silver panel highlights -->
+  <g stroke="#c0c0d2" stroke-width="1" fill="none" opacity="0.15">
+    <polyline points="400,230 450,280 430,330"/>
+    <polyline points="624,230 574,280 594,330"/>
+    <polyline points="440,200 480,240"/>
+    <polyline points="584,200 544,240"/>
+  </g>
+
+  <!-- Top silver highlight -->
+  <ellipse cx="512" cy="210" rx="160" ry="40" fill="url(#silver)"/>
+
+  <!-- LEFT EYE -->
+  <!-- Eye bloom -->
+  <ellipse cx="455" cy="394" rx="45" ry="25" fill="url(#eyeBloom)"/>
+  <!-- Eye slit -->
+  <rect x="430" y="390" width="50" height="8" rx="2" fill="url(#eyeGlow)"/>
+  <!-- Eye inner glow -->
+  <rect x="438" y="392" width="34" height="4" rx="1" fill="#ff8844" opacity="0.6"/>
+
+  <!-- RIGHT EYE -->
+  <!-- Eye bloom -->
+  <ellipse cx="569" cy="394" rx="45" ry="25" fill="url(#eyeBloom)"/>
+  <!-- Eye slit -->
+  <rect x="544" y="390" width="50" height="8" rx="2" fill="url(#eyeGlow)"/>
+  <!-- Eye inner glow -->
+  <rect x="552" y="392" width="34" height="4" rx="1" fill="#ff8844" opacity="0.6"/>
+
+  <!-- Subtle red tint overlay on lower face -->
+  <polygon points="512,500 650,650 512,750 374,650" fill="#dc2626" opacity="0.03"/>
+
+  <!-- Label -->
+  <text x="512" y="830" text-anchor="middle" font-family="monospace" font-size="16" fill="rgba(255,255,255,0.5)">OWL — Systems Architect</text>
+  <text x="512" y="855" text-anchor="middle" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.35)">Targeted.Design</text>
+</svg>

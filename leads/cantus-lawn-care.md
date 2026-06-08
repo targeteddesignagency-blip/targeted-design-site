@@ -1,0 +1,12 @@
+# Cantus Lawn Care
+- **Industry:** Landscaping
+- **Address:** 446 N San Ignacio Ave, San Antonio, TX 78228
+- **ZIP:** 78228
+- **Phone:** (210) 627-2970
+- **Website:** cantucontractingtx.com
+- **Sources:** GreenPal, Networx, BuildZoom, Yelp, Facebook
+- **Verified:** YES
+- **Score:** 4 (Strong)
+- **Notes:** HQ in 78228, father-son owned company, pressure wash + lawn care, 4.6★ 333 reviews. Multiple locations/brands (Cantu Contracting, Cantu Lawn Care, Edward Cantu's).
+- **Diamond ZIP:** 78228 ✅
+- **Found:** 2026-06-03

@@ -1,0 +1,13 @@
+# Dano's Plumbing Co
+- **Industry:** Plumbing
+- **Address:** 2200 Bandera Rd #3, San Antonio, TX 78228
+- **ZIP:** 78228
+- **Phone:** (210) 520-3266
+- **Website:** danosplumbingsa.com
+- **License:** #PM16522 (Texas State Board of Plumbing Examiners)
+- **Sources:** BBB, BuildZoom, Yelp, MapQuest, website
+- **Verified:** MIXED (1-star Yelp from some locations, but BuildZoom and BBB confirm legitimate business)
+- **Score:** 4
+- **Notes:** **FIRST 78228 PLUMBING LEAD CLOSED!** BBB accredited since 2013, license verified, 24/7 emergency service. Note: Some Yelp reviews reference Dano Plumbing & Leak Detection (separate entity?). Main company confirmed via BBB + BuildZoom.
+- **Diamond ZIP:** 78228 ✅
+- **Found:** 2026-06-03

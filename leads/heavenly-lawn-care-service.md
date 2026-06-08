@@ -1,0 +1,12 @@
+# Heavenly Lawn Care Service
+- **Industry:** Landscaping
+- **Address:** 812 S San Augustine Ave, San Antonio, TX 78237
+- **ZIP:** 78237
+- **Phone:** (210) 797-6139
+- **Website:** heavenlylawncareservice.com
+- **Sources:** website, Yelp, Facebook, MapQuest, BrownBook
+- **Verified:** YES
+- **Score:** 4 (Strong)
+- **Notes:** HQ in 78237, full landscaping services, website active, serves San Antonio. Confirmed address across 4+ sources.
+- **Diamond ZIP:** 78237 ✅
+- **Found:** 2026-06-03

@@ -1,0 +1,11 @@
+# Mechanic Masters Auto Repair
+- **Industry:** Auto Repair
+- **Address:** 7321 New Laredo Hwy, San Antonio, TX 78211
+- **ZIP:** 78211
+- **Phone:** (210) 277-0099
+- **Sources:** MapQuest, Superpages, Manta, Bizapedia, Yelp, Facebook
+- **Verified:** MIXED
+- **Score:** 4 (Strong)
+- **Notes:** Since 2020, 20+ years experience, diagnostics + maintenance + repairs, 196 Facebook likes, New Laredo Hwy corridor location. Second 78211 auto repair lead.
+- **Diamond ZIP:** 78211 ✅
+- **Found:** 2026-06-03

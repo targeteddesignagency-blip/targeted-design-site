@@ -1,5 +1,5 @@
 filename,name,role,prompt
-alex-sterling.png,Alex Sterling,CEO,Black man mid-30s clean-shaven confident smile dark eyes dark suit jacket over open collar shirt dark background professional headshot photorealistic studio lighting
+alex-sterling.png,Alex Sterling,CEO,Hispanic man mid-30s confident smile dark eyes dark suit jacket over open collar shirt dark background professional headshot photorealistic studio lighting
 nova-chen.png,Nova Chen,COO,East Asian woman late 20s sharp bob haircut thin glasses no-nonsense expression dark blazer dark background professional headshot photorealistic studio lighting
 river-mitchell.png,River Mitchell,CMO,Latina woman early 30s wavy dark brown hair past shoulders warm approachable smile dark collared shirt dark background professional headshot photorealistic studio lighting
 echo-hayes.png,Echo Hayes,CFO,White man late 20s short brown hair parted on the side analytical calm expression dark vest over white shirt dark background professional headshot photorealistic studio lighting

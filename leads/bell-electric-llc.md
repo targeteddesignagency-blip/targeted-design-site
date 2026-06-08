@@ -1,0 +1,13 @@
+# Bell Electric LLC
+- **Industry:** Electrician
+- **Address:** 1731 S San Marcos #734A, San Antonio, TX 78207
+- **ZIP:** 78207
+- **Phone:** (210) 422-5547
+- **Email:** info@bellelectricsa.com
+- **Website:** bellelectricsa.com
+- **Sources:** website, BBB, MapQuest, Chamber of Commerce, Facebook, Yelp
+- **Verified:** YES
+- **Score:** 5 (Diamond)
+- **Notes:** **FIRST 78207 ELECTRICIAN LEAD CLOSED!** Since 2014, master electrician, 4.8★ from 86 reviews, residential + commercial, free uniforms/PPE/tools for employees (signifies established operation).
+- **Diamond ZIP:** 78207 ✅
+- **Found:** 2026-06-03

@@ -103,7 +103,27 @@
         @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
         .fade-up{animation:fadeUp .6s ease-out both}
         .delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}.delay-4{animation-delay:.4s}
-    </style>
+    
+        /* --- TEAM V2 LAYOUT --- */
+        .team-layout{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:40px}
+        .team-top{margin-bottom:0}
+        .team-card-elevated{transform:scale(1.08);box-shadow:0 8px 40px rgba(254,22,22,.15)}
+        .team-card-elevated .team-photo{filter:grayscale(0)}
+        .team-divider{margin:32px 0;display:flex;align-items:center;justify-content:center}
+        .team-logo-img{width:80px;height:80px;object-fit:contain;opacity:.8}
+        .team-bottom{display:flex;gap:60px;justify-content:center;align-items:flex-start;margin-top:0}
+        .team-col{display:flex;flex-direction:column;gap:24px;flex:1;max-width:340px}
+        .team-col-left{align-items:flex-end}
+        .team-col-right{align-items:flex-start}
+        .team-col .team-card{width:100%}
+        @media(max-width:768px){
+            .team-bottom{flex-direction:column;gap:24px;align-items:center}
+            .team-col{max-width:100%;align-items:center}
+            .team-col-left,.team-col-right{align-items:center}
+            .team-card-elevated{transform:scale(1.04)}
+            .team-logo-img{width:60px;height:60px}
+        }
+</style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -177,167 +197,67 @@
 <section id="team">
     <div class="container">
         <div class="section-label">The Team</div>
-        <div class="section-title">15 agents. One mission.</div>
-        <p class="section-sub">From strategy to print to compliance — every role covered, every call answered.</p>
+        <div class="section-title">Five minds. One mission.</div>
+        <p class="section-sub">Human strategy meets AI execution. Every role covered, every call answered.</p>
 
-        <!-- Executive Leadership -->
-        <div class="team-dept">
-            <div class="team-dept-title">🎯 Executive Leadership</div>
-            <div class="team-grid">
-                <div class="team-card fade-up">
-                    <img src="team/alex-sterling.jpg" alt="Alex Sterling" class="team-photo">
+        <!-- Team Layout: Levi top center, OWL+Alex left, Optimus+Prime right, logo center divider -->
+        <div class="team-layout">
+            <!-- Top: Levi -->
+            <div class="team-top fade-up">
+                <div class="team-card team-card-elevated">
+                    <img src="team/levi.jpg" alt="Levi" class="team-photo">
                     <div class="team-info">
-                        <h4>Alex Sterling</h4>
-                        <div class="role">CEO</div>
-                        <div class="desc">Warm but sharp. Coordinates seven agents, owns the strategy.</div>
-                    </div>
-                </div>
-                <div class="team-card fade-up delay-1">
-                    <img src="team/nova-chen.jpg" alt="Nova Chen" class="team-photo">
-                    <div class="team-info">
-                        <h4>Nova Chen</h4>
-                        <div class="role">COO</div>
-                        <div class="desc">Operations backbone. Every deadline met, every process tight.</div>
-                    </div>
-                </div>
-                <div class="team-card fade-up delay-2">
-                    <img src="team/river-mitchell.jpg" alt="River Mitchell" class="team-photo">
-                    <div class="team-info">
-                        <h4>River Mitchell</h4>
-                        <div class="role">CMO</div>
-                        <div class="desc">The closer. Where Design, Compliance, and Operations overlap — River closes the deal.</div>
-                    </div>
-                </div>
-                <div class="team-card fade-up delay-3">
-                    <img src="team/echo-hayes.jpg" alt="Echo Hayes" class="team-photo">
-                    <div class="team-info">
-                        <h4>Echo Hayes</h4>
-                        <div class="role">CFO</div>
-                        <div class="desc">Pricing, margins, revenue tracking. Every dollar accounted for.</div>
+                        <h4>Levi</h4>
+                        <div class="role">Founder &amp; Director</div>
+                        <div class="desc">The architect. Builds the systems, sets the vision, runs the show.</div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Design Team -->
-        <div class="team-dept">
-            <div class="team-dept-title">🎨 Design Team</div>
-            <div class="team-grid">
-                <div class="team-card fade-up">
-                    <img src="team/iris-nakamura.jpg" alt="Iris Nakamura" class="team-photo">
-                    <div class="team-info">
-                        <h4>Iris Nakamura</h4>
-                        <div class="role">Design Director</div>
-                        <div class="desc">Card design, brand assets, visual identity. Every pixel intentional.</div>
-                    </div>
-                </div>
-                <div class="team-card fade-up delay-1">
-                    <img src="team/kai-moreno.jpg" alt="Kai Moreno" class="team-photo">
-                    <div class="team-info">
-                        <h4>Kai Moreno</h4>
-                        <div class="role">Video Writer</div>
-                        <div class="desc">Scripts, storyboards, Remotion compositions. Motion tells the story.</div>
-                    </div>
-                </div>
-                <div class="team-card fade-up delay-2">
-                    <img src="team/luna-park.jpg" alt="Luna Park" class="team-photo">
-                    <div class="team-info">
-                        <h4>Luna Park</h4>
-                        <div class="role">Image Designer</div>
-                        <div class="desc">Lifestyle renders, product photography, visual mockups.</div>
-                    </div>
-                </div>
+            <!-- Logo Divider -->
+            <div class="team-divider fade-up delay-1">
+                <img src="logo.png" alt="Targeted Design Agency" class="team-logo-img">
             </div>
-        </div>
 
-        <!-- Research & Sales -->
-        <div class="team-dept">
-            <div class="team-dept-title">🦉 Research & Sales</div>
-            <div class="team-grid">
-                <div class="team-card fade-up">
-                    <img src="team/sage-mitchell.jpg" alt="Sage Mitchell" class="team-photo">
-                    <div class="team-info">
-                        <h4>Sage Mitchell</h4>
-                        <div class="role">Research Director</div>
-                        <div class="desc">Market intel, ZIP analysis, competitive mapping. Data tells the story.</div>
+            <!-- Bottom: Two columns -->
+            <div class="team-bottom">
+                <!-- Left: OWL + Alex -->
+                <div class="team-col team-col-left">
+                    <div class="team-card fade-up delay-2">
+                        <img src="team/owl.jpg" alt="OWL" class="team-photo">
+                        <div class="team-info">
+                            <h4>OWL</h4>
+                            <div class="role">Content Engine</div>
+                            <div class="desc">Content production at scale. Social media, email, copy — the voice of the brand.</div>
+                        </div>
+                    </div>
+                    <div class="team-card fade-up delay-3">
+                        <img src="team/alex-sterling.jpg" alt="Alex Sterling" class="team-photo">
+                        <div class="team-info">
+                            <h4>Alex Sterling</h4>
+                            <div class="role">CEO</div>
+                            <div class="desc">Strategy and coordination. Warm but sharp — the connective tissue of the operation.</div>
+                        </div>
                     </div>
                 </div>
-                <div class="team-card fade-up delay-1">
-                    <img src="team/marcus-webb.jpg" alt="Marcus Webb" class="team-photo">
-                    <div class="team-info">
-                        <h4>Marcus Webb</h4>
-                        <div class="role">Head of Sales</div>
-                        <div class="desc">Lead qualification, outreach sequences, pipeline management.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Compliance Team -->
-        <div class="team-dept">
-            <div class="team-dept-title">✅ Compliance Team</div>
-            <div class="team-grid">
-                <div class="team-card fade-up">
-                    <img src="team/quinn-washington.jpg" alt="Quinn Washington" class="team-photo">
-                    <div class="team-info">
-                        <h4>Quinn Washington</h4>
-                        <div class="role">Compliance Director</div>
-                        <div class="desc">Regulatory oversight, legal, privacy. Every card ships USPS-compliant.</div>
+                <!-- Right: Optimus + Prime -->
+                <div class="team-col team-col-right">
+                    <div class="team-card fade-up delay-2">
+                        <img src="team/optimus.jpg" alt="Hermes" class="team-photo">
+                        <div class="team-info">
+                            <h4>Hermes</h4>
+                            <div class="role">Research Director</div>
+                            <div class="desc">Market intel, lead generation, pipeline. Data-driven prospecting at scale.</div>
+                        </div>
                     </div>
-                </div>
-                <div class="team-card fade-up delay-1">
-                    <img src="team/derek-cole.jpg" alt="Derek Cole" class="team-photo">
-                    <div class="team-info">
-                        <h4>Derek Cole</h4>
-                        <div class="role">Code Compliance</div>
-                        <div class="desc">Technical standards, accessibility, digital compliance.</div>
-                    </div>
-                </div>
-                <div class="team-card fade-up delay-2">
-                    <img src="team/piper-hale.jpg" alt="Piper Hale" class="team-photo">
-                    <div class="team-info">
-                        <h4>Piper Hale</h4>
-                        <div class="role">Print Compliance</div>
-                        <div class="desc">USPS specs, bleed, indicia, carrier route verification. Zero rejected drops.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Ops & Technology -->
-        <div class="team-dept">
-            <div class="team-dept-title">🔧 Ops & Technology</div>
-            <div class="team-grid">
-                <div class="team-card fade-up">
-                    <img src="team/jordan-reed.jpg" alt="Jordan Reed" class="team-photo">
-                    <div class="team-info">
-                        <h4>Jordan Reed</h4>
-                        <div class="role">CTO</div>
-                        <div class="desc">Infrastructure, integrations, system architecture. The stack runs itself.</div>
-                    </div>
-                </div>
-                <div class="team-card fade-up delay-1">
-                    <img src="team/atlas-warren.jpg" alt="Atlas Warren" class="team-photo">
-                    <div class="team-info">
-                        <h4>Atlas Warren</h4>
-                        <div class="role">R&D</div>
-                        <div class="desc">Model research, hardware benchmarks, what's next in AI for local business.</div>
-                    </div>
-                </div>
-                <div class="team-card fade-up delay-2">
-                    <img src="team/worthington-miles.jpg" alt="Worthington Miles" class="team-photo">
-                    <div class="team-info">
-                        <h4>Worthington Miles</h4>
-                        <div class="role">Crypto Manager</div>
-                        <div class="desc">Digital payments, cryptocurrency integration, financial ops automation.</div>
-                    </div>
-                </div>
-                <div class="team-card fade-up delay-3">
-                    <img src="team/carmen-diaz.jpg" alt="Carmen Diaz" class="team-photo">
-                    <div class="team-info">
-                        <h4>Carmen Diaz</h4>
-                        <div class="role">Operations Lead</div>
-                        <div class="desc">Day-to-day execution, print coordination, USPS logistics.</div>
+                    <div class="team-card fade-up delay-3">
+                        <img src="team/prime.jpg" alt="Prime" class="team-photo">
+                        <div class="team-info">
+                            <h4>Prime</h4>
+                            <div class="role">Systems Architect</div>
+                            <div class="desc">Infrastructure, integrations, automation. Builds what others only plan.</div>
+                        </div>
                     </div>
                 </div>
             </div>

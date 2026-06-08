@@ -1,0 +1,12 @@
+# Celebrate Dental & Braces - West Commerce
+- **Industry:** Dentist
+- **Address:** 4965 W Commerce St, San Antonio, TX 78237
+- **ZIP:** 78237
+- **Phone:** (210) 802-7000
+- **Website:** celebratedental.com
+- **Sources:** website, BBB, MapQuest, Acompio
+- **Verified:** YES
+- **Score:** 4 (Strong)
+- **Notes:** W Commerce location in 78237, franchise, general + orthodontics + dentures + implants, Saturday hours, 6810 Bandera Road + Marbach locations also nearby. Quality dental option for 78237.
+- **Diamond ZIP:** 78237 ✅
+- **Found:** 2026-06-03

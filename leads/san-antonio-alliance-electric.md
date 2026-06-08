@@ -1,0 +1,12 @@
+# San Antonio Alliance Electric Inc
+- **Industry:** Electrician
+- **Address:** 347 Doolittle St, San Antonio, TX 78211
+- **ZIP:** 78211
+- **Phone:** (210) 922-8630
+- **Website:** allianceofsa.com
+- **Sources:** BuildZoom, website, LinkedIn, Open Permit Data
+- **Verified:** YES
+- **Score:** 4 (Strong)
+- **Notes:** **FIRST 78211 ELECTRICIAN LEAD CLOSED!** Since 2001, family-owned, commercial + residential, site lighting + generator services, BuildZoom verified, 100% permit closure rate in Austin area.
+- **Diamond ZIP:** 78211 ✅
+- **Found:** 2026-06-03

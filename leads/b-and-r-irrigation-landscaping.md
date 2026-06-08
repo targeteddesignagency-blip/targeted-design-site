@@ -1,0 +1,11 @@
+# B & R Irrigation and Landscaping
+- **Industry:** Landscaping
+- **Address:** 506 Overhill Dr, San Antonio, TX 78228
+- **ZIP:** 78228
+- **Phone:** (210) 809-5539
+- **Sources:** MapQuest, BuildZoom, Yahoo Local, Yelp
+- **Verified:** YES
+- **Score:** 4 (Strong)
+- **Notes:** HQ in 78228, irrigation specialist, landscape lighting, BuildZoom verified. Serves San Antonio and surrounding areas.
+- **Diamond ZIP:** 78228 ✅
+- **Found:** 2026-06-03
