@@ -4,22 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How We Work — Targeted Design Agency</title>
-<meta name="description" content="Design, Compliance, and Operations — where they overlap, River closes. See how Targeted Design Agency's three teams work together.">
+<meta name="description" content="See how Targeted Design Agency's five-person team works together — from strategy to execution.">
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-        --black:#000000;
-        --dark:#333132;
-        --red:#fe1616;
-        --white:#ffffff;
-        --gray:#999;
-        --light-gray:#ccc;
+        --black:#000000; --dark:#333132; --red:#fe1616;
+        --white:#ffffff; --gray:#999; --light-gray:#ccc;
     }
     body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* NAV */
     nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(254,22,22,.15);padding:0 24px}
     nav .container{display:flex;justify-content:space-between;align-items:center;height:64px}
     .logo{font-size:1.25rem;font-weight:800;letter-spacing:-.5px;color:var(--white)}
@@ -30,37 +25,51 @@
     .nav-links a.active{color:var(--red)}
     .nav-cta{background:var(--red);color:var(--white)!important;padding:8px 20px;border-radius:6px;font-weight:600;font-size:.875rem;transition:transform .15s,box-shadow .2s}
     .nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(254,22,22,.4)}
-    .menu-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
 
     /* HERO */
-    .hero{min-height:40vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 40px;position:relative}
-    .hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(254,22,22,.08) 0%,transparent 70%);pointer-events:none}
-    h1 { font-size: clamp(2rem,5vw,3.5rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 8px; text-align: center; }
-    h1 em { color: var(--red); font-style: normal; }
-    .subtitle { font-size: 14px; color: var(--gray); margin-bottom: 40px; text-align: center; }
+    .hero{padding:140px 24px 60px;text-align:center}
+    h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:-1px;margin-bottom:8px}
+    h1 em{color:var(--red);font-style:normal}
+    .subtitle{color:var(--gray);font-size:14px;max-width:500px;margin:0 auto}
 
-    /* VENN */
-    .venn-row { display: flex; align-items: center; justify-content: center; position: relative; }
-    .venn { position: relative; width: 600px; height: 520px; }
-    .c { position: absolute; width: 320px; height: 320px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 40px; transition: transform 0.3s; }
-    .c:hover { transform: scale(1.04); }
-    .c1 { background: rgba(254,22,22,0.10); border: 2.5px solid rgba(254,22,22,0.7); top: 0; left: 50%; transform: translateX(-50%); }
-    .c1:hover { transform: translateX(-50%) scale(1.04); }
-    .c2 { background: rgba(254,22,22,0.07); border: 2.5px solid rgba(254,22,22,0.5); top: 160px; left: 0; }
-    .c3 { background: rgba(51,49,50,0.15); border: 2.5px solid rgba(254,22,22,0.6); top: 160px; right: 0; }
-    .c-label { font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 1.5px; color: #fe1616; }
-    .c-sub { font-size: 11px; color: #aaa; text-align: center; margin-top: 6px; line-height: 1.5; }
-    .center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -25%); text-align: center; z-index: 10; }
-    .center-name { font-size: 28px; font-weight: 900; color: #fe1616; letter-spacing: -0.5px; }
-    .center-role { font-size: 12px; color: #fff; margin-top: 2px; text-transform: uppercase; letter-spacing: 2px; }
-    .pair { position: absolute; z-index: 5; text-align: center; pointer-events: none; }
-    .p12 { top: 140px; left: 50%; transform: translateX(-50%); }
-    .p13 { top: 140px; left: 50%; transform: translateX(-50%); }
-    .p23 { top: 370px; left: 50%; transform: translateX(-50%); }
-    .pair-text { font-size: 10px; font-weight: 600; color: #fe1616; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.8; }
-    .below { margin: 40px auto 0; text-align: center; max-width: 580px; }
-    .below p { font-size: 13px; color: #888; line-height: 1.7; margin-bottom: 6px; }
-    .below .hl { color: #fe1616; font-weight: 700; }
+    /* FLOW DIAGRAM */
+    .flow{padding:40px 24px 80px}
+    .flow-diagram{display:flex;flex-direction:column;align-items:center;gap:0}
+
+    /* Top: Levi */
+    .flow-top{display:flex;justify-content:center;margin-bottom:20px}
+    .flow-node{text-align:center;padding:16px 24px;border-radius:16px;border:1px solid rgba(254,22,22,.3);background:rgba(254,22,22,.06);min-width:200px}
+    .flow-node .node-name{font-size:1.1rem;font-weight:800;color:var(--white)}
+    .flow-node .node-role{font-size:.75rem;color:var(--red);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+    .flow-node .node-desc{font-size:.7rem;color:var(--gray);margin-top:6px;line-height:1.4}
+    .flow-top .flow-node{border-color:var(--red);box-shadow:0 0 30px rgba(254,22,22,.15);min-width:240px}
+
+    /* Connector */
+    .flow-connector{width:2px;height:40px;background:linear-gradient(to bottom,rgba(254,22,22,.6),rgba(254,22,22,.2));margin:0 auto;position:relative}
+    .flow-connector::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;background:var(--red);opacity:.6}
+
+    /* Logo divider */
+    .flow-logo{display:flex;justify-content:center;margin:20px 0}
+    .flow-logo img{width:50px;height:50px;object-fit:contain;opacity:.5}
+
+    /* Middle row: Strategy + Creative */
+    .flow-row{display:flex;justify-content:center;gap:24px;margin:20px 0}
+    .flow-row .flow-node{min-width:220px;border-color:rgba(255,255,255,.08);background:var(--dark)}
+    .flow-row .flow-node:hover{border-color:rgba(254,22,22,.3)}
+
+    /* Labels between nodes */
+    .flow-label{display:flex;align-items:center;justify-content:center;color:var(--red);font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:0 8px}
+
+    /* Output row */
+    .flow-output{display:flex;justify-content:center;margin-top:40px}
+    .flow-output .flow-node{border-color:rgba(254,22,22,.2);background:rgba(254,22,22,.04);max-width:500px;width:100%}
+    .flow-output .node-name{font-size:1rem}
+    .flow-output .node-desc{font-size:.8rem;max-width:400px;margin-left:auto;margin-right:auto}
+
+    /* Principles */
+    .principles{max-width:700px;margin:60px auto 0;text-align:center}
+    .principles p{font-size:.85rem;color:var(--light-gray);line-height:1.8;margin-bottom:8px}
+    .principles .hl{color:var(--red);font-weight:700}
 
     /* CTA */
     .cta-section{text-align:center;background:linear-gradient(135deg,var(--dark) 0%,rgba(254,22,22,.08) 100%);border-radius:24px;padding:60px 40px;margin:60px auto;max-width:1000px}
@@ -69,34 +78,18 @@
     .btn{display:inline-block;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;transition:all .2s;cursor:pointer}
     .btn-primary{background:var(--red);color:var(--white);box-shadow:0 4px 24px rgba(254,22,22,.35)}
     .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(254,22,22,.5)}
-    .btn-outline{border:2px solid var(--red);color:var(--red);background:transparent}
-    .btn-outline:hover{background:var(--red);color:var(--white)}
 
-    /* FOOTER */
     footer{border-top:1px solid rgba(255,255,255,.06);padding:40px 24px;text-align:center}
     footer p{color:var(--gray);font-size:.85rem;margin-bottom:8px}
     footer a{color:var(--red);transition:color .2s}
     footer a:hover{color:var(--white)}
 
-    @media(max-width:900px){
-        .venn{width:360px;height:360px}
-        .c{width:200px;height:200px;padding-top:24px}
-        .c1{top:0;left:50%;transform:translateX(-50%)}
-        .c2{top:100px;left:0}
-        .c3{top:100px;right:0}
-        .c-label{font-size:14px}
-        .c-sub{font-size:9px}
-        .center-name{font-size:20px}
-    }
     @media(max-width:600px){
         .nav-links{display:none}
-        .menu-toggle{display:block}
-        .venn{width:300px;height:300px}
-        .c{width:170px;height:170px;padding-top:20px}
-        .c1{top:0}
-        .c2{top:80px;left:0}
-        .c3{top:80px;right:0}
-        .pair{display:none}
+        .flow-row{flex-direction:column;align-items:center;gap:12px}
+        .flow-row .flow-node{min-width:90%;max-width:320px}
+        .flow-top .flow-node{min-width:90%;max-width:320px}
+        .flow{flex-direction:column;align-items:center}
     }
 
     @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
@@ -105,7 +98,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
     <div class="container">
         <div class="logo">Targeted<span>.</span>Design</div>
@@ -120,52 +112,79 @@
     </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-    <div>
-        <h1 class="fade-up">Three Teams.<br>One <em>Overlap</em>.</h1>
-        <p class="subtitle">Design · Compliance · Operations — The overlap is the deal</p>
-    </div>
+<section class="hero fade-up">
+    <h1>How Everything <em>Moves</em>.</h1>
+    <p class="subtitle">Five agents. One pipeline. From strategy to mailbox — here's how it flows.</p>
 </section>
 
-<!-- VENN -->
-<section style="padding:0 24px 40px">
-    <div class="venn-row">
-        <div class="venn">
-            <div class="c c1">
-                <div class="c-label">Design</div>
-                <div class="c-sub">🎨 Iris · Kai · Luna<br>Card design · Print files<br>Brand assets · Mockups</div>
-            </div>
-            <div class="c c2">
-                <div class="c-label">Compliance</div>
-                <div class="c-sub">✅ Quinn · Derek · Piper<br>USPS regs · Legal<br>Contracts · ToS · Privacy</div>
-            </div>
-            <div class="c c3">
-                <div class="c-label">Operations</div>
-                <div class="c-sub">🔧 Nova · Jordan · Atlas<br>Voice Agent · Outreach<br>Attribution · Print · Drop</div>
-            </div>
-            <div class="center">
-                <div class="center-name">River & Team</div>
-                <div class="center-role">🤝 The Close</div>
-            </div>
-            <div class="pair p12">
-                <div class="pair-text">Approved Design<br>USPS-Compliant Card</div>
-            </div>
-            <div class="pair p23">
-                <div class="pair-text">Legal Operations<br>Contracts + Attribution</div>
+<section class="flow">
+    <div class="flow-diagram">
+
+        <!-- TOP: LEVI -->
+        <div class="flow-top fade-up">
+            <div class="flow-node">
+                <div class="node-name">Levi</div>
+                <div class="node-role">Founder &amp; Director</div>
+                <div class="node-desc">Sets the vision. Owns the mission. Greenlights every move.</div>
             </div>
         </div>
+
+        <div class="flow-connector"></div>
+
+        <!-- MIDDLE ROW: ALEX + OWL + HERMES + PRIME -->
+        <div class="flow-row fade-up">
+            <div class="flow-node">
+                <div class="node-name">Alex Sterling</div>
+                <div class="node-role">CEO</div>
+                <div class="node-desc">Strategy &amp; coordination. The connective tissue of the operation.</div>
+            </div>
+            <div class="flow-label">↕</div>
+            <div class="flow-node">
+                <div class="node-name">OWL</div>
+                <div class="node-role">CMO</div>
+                <div class="node-desc">Content at scale. Social, email, copy — the voice of the brand.</div>
+            </div>
+            <div class="flow-label">↕</div>
+            <div class="flow-node">
+                <div class="node-name">Hermes</div>
+                <div class="node-role">Research Director</div>
+                <div class="node-desc">Market intel, leads, pipeline. Data-driven prospecting at scale.</div>
+            </div>
+            <div class="flow-label">↕</div>
+            <div class="flow-node">
+                <div class="node-name">Prime</div>
+                <div class="node-role">CTO</div>
+                <div class="node-desc">Infrastructure, integrations, automation. The stack runs itself.</div>
+            </div>
+        </div>
+
+        <div class="flow-connector"></div>
+
+        <div class="flow-logo">
+            <img src="logo.png" alt="Targeted Design Agency">
+        </div>
+
+        <div class="flow-connector"></div>
+
+        <!-- OUTPUT -->
+        <div class="flow-output fade-up">
+            <div class="flow-node">
+                <div class="node-name">📬 EDDM Campaign Delivered</div>
+                <div class="node-role">The Overlap Is The Output</div>
+                <div class="node-desc">Design + Compliance + Research + Technology = a card in the mailbox that gets opened, read, and acted on. That's the whole game.</div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="below">
-        <p><span class="hl">Design</span> without compliance = a card USPS rejects.</p>
-        <p><span class="hl">Compliance</span> without operations = a contract nobody answers the phone for.</p>
-        <p><span class="hl">Operations</span> without design = an engine with nothing to deliver.</p>
-        <p><span class="hl">All three overlapping = River closes.</span></p>
+    <div class="principles fade-up" style="margin-top:48px">
+        <p><span class="hl">Strategy</span> without research = guessing who to target.</p>
+        <p><span class="hl">Creative</span> without compliance = a card USPS rejects.</p>
+        <p><span class="hl">Research</span> without technology = data nobody acts on.</p>
+        <p><span class="hl">All four moving together = the mailbox works for you.</span></p>
     </div>
 </section>
 
-<!-- CTA -->
 <section>
     <div class="container">
         <div class="cta-section fade-up">
@@ -177,12 +196,11 @@
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <div class="container">
-        <p>&copy; 2025 Targeted Design Agency · San Antonio, TX · <a href="tel:+12109035551">(210) 903-5551</a></p>
+        <p>&copy; 2025 Targeted Design Agency &middot; San Antonio, TX &middot; <a href="tel:+12109035551">(210) 903-5551</a></p>
         <p><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a></p>
-        <p style="color:var(--gray);font-size:.75rem">Every Door Direct Mail® and EDDM® are registered trademarks of the United States Postal Service.</p>
+        <p style="color:var(--gray);font-size:.75rem">Every Door Direct Mail&reg; and EDDM&reg; are registered trademarks of the United States Postal Service.</p>
     </div>
 </footer>
 
